@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clearcast</title>
+  </head>
+  <body>
+    <h1>Welcome to the jungle</h1>
+    <p>
+      ZIP:
+      <span th:text="${zip}">UNKNOWN</span>
+    </p>
+    <p>
+      DELAY_FOR_RENDER:
+      <span th:text="${delayForRender}">0</span>
+    </p>
+    <p>
+      NWS_USER_AGENT:
+      <span th:text="${nwsUserAgent}">MISSING</span>
+    </p>
+    <p>
+      NEXT_CURRENT_FETCH:
+      <span th:text="${nextFetchCurrent}">UNKNOWN</span>
+    </p>
+    <p>
+      NEXT_RADAR_FETCH:
+      <span th:text="${nextFetchRadar}">UNKNOWN</span>
+    </p>
+    <p>
+      NEXT_DAILY_FETCH:
+      <span th:text="${nextFetchDaily}">UNKNOWN</span>
+    </p>
+    <p>
+      NEXT_ALERTS_FETCH:
+      <span th:text="${nextFetchAlerts}">UNKNOWN</span>
+    </p>
+  </body>
+</html>
