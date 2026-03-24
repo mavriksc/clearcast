@@ -8,11 +8,13 @@ import okhttp3.Request
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
+import java.nio.file.StandardOpenOption
 import java.time.Duration
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonPrimitive
 import org.mavriksc.clearcast.loadEnv
+import org.mavriksc.clearcast.findEnvFileOrRoot
 
 class WeatherGovService(
     private val client: OkHttpClient,
@@ -31,6 +33,17 @@ class WeatherGovService(
 
     fun getAlertsByState(stateCode: String): JsonObject {
         val url = "https://api.weather.gov/alerts/active?area=$stateCode"
+        return fetchJson(url)
+    }
+
+    fun getObservationStations(observationStationsUrl: String): JsonObject = fetchJson(observationStationsUrl)
+
+    fun getLatestObservation(stationOrUrl: String): JsonObject {
+        val url = when {
+            stationOrUrl.contains("/observations/latest") -> stationOrUrl
+            stationOrUrl.contains("/stations/") -> "${stationOrUrl.trimEnd('/')}/observations/latest"
+            else -> "https://api.weather.gov/stations/${stationOrUrl.trim()}/observations/latest"
+        }
         return fetchJson(url)
     }
 
@@ -106,6 +119,10 @@ fun main() {
         )
     }
 
+    if (latLon == null) {
+        updateEnvLatLon(resolvedLat, resolvedLon)
+    }
+
     val service = WeatherGovService.fromEnv()
     val responsesDir = Path.of("responses")
     Files.createDirectories(responsesDir)
@@ -155,22 +172,105 @@ private fun parseLatLon(lat: String?, lon: String?): Pair<Double, Double>? {
 }
 
 private fun resolveLatLonFromZip(zip: String): Pair<Double, Double> {
-    val url = "https://api.zippopotam.us/us/$zip"
-    val client = OkHttpClient()
+    val normalizedZip = zip.trim().padStart(5, '0')
+    val gazetteerZip = ensureGazetteerZip()
+    val (latIndex, lonIndex, zipIndex) = findGazetteerColumns(gazetteerZip)
+    val match = findZipInGazetteer(gazetteerZip, normalizedZip, zipIndex, latIndex, lonIndex)
+    return match ?: throw IOException("zip lookup failed for $normalizedZip in gazetteer data")
+}
+
+private fun ensureGazetteerZip(): Path {
+    val dataDir = Path.of("data")
+    Files.createDirectories(dataDir)
+    val target = dataDir.resolve("2023_Gaz_zcta_national.zip")
+    if (Files.exists(target)) {
+        return target
+    }
+
+    val url = "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_zcta_national.zip"
     val request = Request.Builder().url(url).build()
-    val response = client.newCall(request).execute()
+    val response = OkHttpClient().newCall(request).execute()
     response.use {
         if (!it.isSuccessful) {
-            throw IOException("zip lookup failed (${it.code}) for $zip")
+            throw IOException("gazetteer download failed (${it.code})")
         }
-        val body = it.body?.string() ?: throw IOException("zip lookup empty body for $zip")
-        val json = Json.parseToJsonElement(body).jsonObject
-        val places = json["places"]?.jsonArray ?: throw IOException("zip lookup missing places for $zip")
-        val first = places.firstOrNull()?.jsonObject ?: throw IOException("zip lookup empty places for $zip")
-        val lat = first["latitude"]?.jsonPrimitive?.content?.toDoubleOrNull()
-            ?: throw IOException("zip lookup missing latitude for $zip")
-        val lon = first["longitude"]?.jsonPrimitive?.content?.toDoubleOrNull()
-            ?: throw IOException("zip lookup missing longitude for $zip")
-        return lat to lon
+        val bytes = it.body?.bytes() ?: throw IOException("gazetteer download empty")
+        Files.write(target, bytes, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
     }
+    return target
+}
+
+private fun findGazetteerColumns(zipFile: Path): Triple<Int, Int, Int> {
+    java.util.zip.ZipInputStream(Files.newInputStream(zipFile)).use { zis ->
+        var entry = zis.nextEntry
+        while (entry != null) {
+            if (entry.name.endsWith(".txt")) {
+                val reader = zis.bufferedReader()
+                val header = reader.readLine() ?: throw IOException("gazetteer header missing")
+                val columns = header.split('\t').map { it.trim() }
+                val zipIndex = columns.indexOfFirst { it.equals("GEOID", true) || it.equals("ZCTA5", true) || it.equals("NAME", true) }
+                val latIndex = columns.indexOfFirst { it.equals("INTPTLAT", true) || it.equals("INTPTLAT10", true) }
+                val lonIndex = columns.indexOfFirst { it.equals("INTPTLONG", true) || it.equals("INTPTLON", true) || it.equals("INTPTLON10", true) }
+                if (zipIndex < 0 || latIndex < 0 || lonIndex < 0) {
+                    throw IOException("gazetteer columns not found")
+                }
+                return Triple(latIndex, lonIndex, zipIndex)
+            }
+            entry = zis.nextEntry
+        }
+    }
+    throw IOException("gazetteer txt not found")
+}
+
+private fun findZipInGazetteer(
+    zipFile: Path,
+    zip: String,
+    zipIndex: Int,
+    latIndex: Int,
+    lonIndex: Int,
+): Pair<Double, Double>? {
+    java.util.zip.ZipInputStream(Files.newInputStream(zipFile)).use { zis ->
+        var entry = zis.nextEntry
+        while (entry != null) {
+            if (entry.name.endsWith(".txt")) {
+                val reader = zis.bufferedReader()
+                reader.readLine()
+                var line = reader.readLine()
+                while (line != null) {
+                    val parts = line.split('\t')
+                    if (parts.size > lonIndex) {
+                        val code = parts[zipIndex].trim()
+                        if (code == zip) {
+                            val lat = parts[latIndex].trim().toDouble()
+                            val lon = parts[lonIndex].trim().toDouble()
+                            return lat to lon
+                        }
+                    }
+                    line = reader.readLine()
+                }
+            }
+            entry = zis.nextEntry
+        }
+    }
+    return null
+}
+
+private fun updateEnvLatLon(lat: Double, lon: Double) {
+    val envFile = findEnvFileOrRoot()
+    val lines = if (Files.exists(envFile)) Files.readAllLines(envFile).toMutableList() else mutableListOf()
+    var latSet = false
+    var lonSet = false
+    for (i in lines.indices) {
+        if (lines[i].trimStart().startsWith("LAT=")) {
+            lines[i] = "LAT=$lat"
+            latSet = true
+        }
+        if (lines[i].trimStart().startsWith("LON=")) {
+            lines[i] = "LON=$lon"
+            lonSet = true
+        }
+    }
+    if (!latSet) lines.add("LAT=$lat")
+    if (!lonSet) lines.add("LON=$lon")
+    Files.writeString(envFile, lines.joinToString("\n", postfix = "\n"), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
 }

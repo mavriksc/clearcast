@@ -1,0 +1,17 @@
+.radar-card {
+  display: grid;
+  gap: 12px;
+}
+
+.radar-frame {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.radar-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

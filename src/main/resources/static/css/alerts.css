@@ -1,0 +1,9 @@
+.alerts-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.alerts-list li {
+  margin: 8px 0;
+}

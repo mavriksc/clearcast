@@ -1,0 +1,36 @@
+.hourly-icons {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 16px;
+  gap: 0;
+}
+
+.hourly-icon {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  line-height: 0;
+  height: 56px;
+}
+
+.hourly-icon img {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  display: block;
+  border: 2px solid #000;
+  box-sizing: border-box;
+}
+
+#hourly-chart {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}

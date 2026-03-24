@@ -13,6 +13,7 @@ import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import org.mavriksc.clearcast.AlertSeverity
 import org.mavriksc.clearcast.AlertUrgency
+import org.mavriksc.clearcast.AlertFilters
 import org.mavriksc.clearcast.AlertsCard
 import org.mavriksc.clearcast.ConditionTheme
 import org.mavriksc.clearcast.CurrentConditionsCard
@@ -22,11 +23,14 @@ import org.mavriksc.clearcast.HourlyForecastCard
 import org.mavriksc.clearcast.HourlyForecastPoint
 import org.mavriksc.clearcast.PrecipType
 import org.mavriksc.clearcast.WeatherAlert
+import org.mavriksc.clearcast.loadAlertFilters
 
 data class PointsInfo(
     val locationName: String,
     val stateCode: String,
     val timeZone: ZoneId,
+    val sunrise: Instant?,
+    val sunset: Instant?,
 )
 
 fun parsePoints(points: JsonObject): PointsInfo {
@@ -35,10 +39,15 @@ fun parsePoints(points: JsonObject): PointsInfo {
     val city = relative.str("city") ?: "Unknown"
     val state = relative.str("state") ?: "NA"
     val timeZone = props.str("timeZone") ?: "UTC"
+    val astro = props.obj("astronomicalData")
+    val sunrise = astro.str("sunrise")?.toInstant()
+    val sunset = astro.str("sunset")?.toInstant()
     return PointsInfo(
         locationName = "$city, $state",
         stateCode = state,
         timeZone = ZoneId.of(timeZone),
+        sunrise = sunrise,
+        sunset = sunset,
     )
 }
 
@@ -147,16 +156,61 @@ fun parseCurrentFromHourlyJson(
     )
 }
 
-fun parseAlerts(alerts: JsonObject): AlertsCard {
+fun parseCurrentFromObservationJson(
+    observation: JsonObject,
+    pointsInfo: PointsInfo,
+): CurrentConditionsCard {
+    val props = observation.obj("properties")
+    val observedAt = props.str("timestamp")?.toInstant() ?: Instant.now()
+    val tempValue = props.obj("temperature").num("value")
+    val tempUnit = props.obj("temperature").str("unitCode")
+    val tempF = tempValue?.let { toFahrenheit(it, tempUnit) } ?: 0.0
+
+    val heatIndexValue = props.obj("heatIndex").num("value")
+    val heatIndexUnit = props.obj("heatIndex").str("unitCode")
+    val windChillValue = props.obj("windChill").num("value")
+    val windChillUnit = props.obj("windChill").str("unitCode")
+    val feelsLikeF = when {
+        heatIndexValue != null -> toFahrenheit(heatIndexValue, heatIndexUnit)
+        windChillValue != null -> toFahrenheit(windChillValue, windChillUnit)
+        else -> null
+    }
+
+    val humidity = props.obj("relativeHumidity").num("value")?.roundToInt()
+    val windSpeedValue = props.obj("windSpeed").num("value")
+    val windSpeedUnit = props.obj("windSpeed").str("unitCode")
+    val windMph = windSpeedValue?.let { toMph(it, windSpeedUnit) }
+    val condition = props.str("textDescription") ?: "Unknown"
+    val icon = props.str("icon") ?: ""
+
+    val isDaytime = if (pointsInfo.sunrise != null && pointsInfo.sunset != null) {
+        !observedAt.isBefore(pointsInfo.sunrise) && observedAt.isBefore(pointsInfo.sunset)
+    } else {
+        val localHour = observedAt.atZone(pointsInfo.timeZone).hour
+        localHour in 6..18
+    }
+
+    return CurrentConditionsCard(
+        locationName = pointsInfo.locationName,
+        temperatureF = tempF,
+        feelsLikeF = feelsLikeF,
+        humidityPercent = humidity,
+        windMph = windMph,
+        condition = condition,
+        icon = icon,
+        isDaytime = isDaytime,
+        observedAt = observedAt,
+        conditionTheme = inferConditionTheme(condition),
+    )
+}
+
+fun parseAlerts(alerts: JsonObject, filters: AlertFilters = loadAlertFilters()): AlertsCard {
     val updatedAt = alerts.str("updated")?.toInstant() ?: Instant.now()
     val features = alerts.array("features")
     val items = features
         .mapNotNull { it.objOrNull() }
         .mapNotNull { feature ->
             val props = feature.objOrNull("properties") ?: return@mapNotNull null
-            if (!matchesAlertFilter(props)) {
-                return@mapNotNull null
-            }
             val title = props.str("event") ?: props.str("headline") ?: "Alert"
             val severity = props.str("severity")?.toSeverity() ?: AlertSeverity.UNKNOWN
             val urgency = props.str("urgency")?.toUrgency() ?: AlertUrgency.UNKNOWN
@@ -165,6 +219,10 @@ fun parseAlerts(alerts: JsonObject): AlertsCard {
                 ?.map { it.trim() }
                 ?.filter { it.isNotBlank() }
                 ?: emptyList()
+            val matchedAreas = filters.filterAreas(areas)
+            if (matchedAreas.isEmpty()) {
+                return@mapNotNull null
+            }
             val effective = props.str("effective")?.toInstant()
             val expires = props.str("expires")?.toInstant()
             val description = props.str("description") ?: ""
@@ -172,7 +230,7 @@ fun parseAlerts(alerts: JsonObject): AlertsCard {
                 title = title,
                 severity = severity,
                 urgency = urgency,
-                areas = areas,
+                areas = matchedAreas,
                 effectiveAt = effective,
                 expiresAt = expires,
                 description = description,
@@ -204,29 +262,6 @@ private fun parsePrecipTypes(text: String): List<PrecipType> {
     return types.ifEmpty { listOf(PrecipType.NONE) }
 }
 
-private fun matchesAlertFilter(props: JsonObject): Boolean {
-    val haystack = buildString {
-        append(props.str("areaDesc") ?: "")
-        append(" ")
-        append(props.str("headline") ?: "")
-        append(" ")
-        append(props.str("description") ?: "")
-        append(" ")
-        append(props.str("event") ?: "")
-    }
-
-    if (haystack.contains("TX")) {
-        return true
-    }
-
-    val lower = haystack.lowercase()
-    return lower.contains("texas") ||
-        lower.contains("dallas") ||
-        lower.contains("farmers branch") ||
-        lower.contains("addison") ||
-        lower.contains("tyler")
-}
-
 private fun inferConditionTheme(text: String): ConditionTheme {
     val lower = text.lowercase()
     return when {
@@ -241,6 +276,29 @@ private fun inferConditionTheme(text: String): ConditionTheme {
         "partly" in lower -> ConditionTheme.PARTLY_CLOUDY
         "cloud" in lower || "overcast" in lower -> ConditionTheme.CLOUDY
         else -> ConditionTheme.OTHER
+    }
+}
+
+private fun toFahrenheit(value: Double, unitCode: String?): Double {
+    if (unitCode == null) {
+        return value
+    }
+    return when {
+        unitCode.contains("degF") -> value
+        unitCode.contains("degC") -> value * 9.0 / 5.0 + 32.0
+        else -> value
+    }
+}
+
+private fun toMph(value: Double, unitCode: String?): Double {
+    if (unitCode == null) {
+        return value
+    }
+    return when {
+        unitCode.contains("m_s-1") -> value * 2.23694
+        unitCode.contains("km_h-1") -> value * 0.621371
+        unitCode.contains("kn") -> value * 1.15078
+        else -> value
     }
 }
 

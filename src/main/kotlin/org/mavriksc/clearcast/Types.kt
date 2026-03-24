@@ -111,3 +111,14 @@ enum class ConditionTheme {
     HAZE,
     OTHER,
 }
+
+enum class MoonPhase {
+    NEW,
+    WAXING_CRESCENT,
+    FIRST_QUARTER,
+    WAXING_GIBBOUS,
+    FULL,
+    WANING_GIBBOUS,
+    LAST_QUARTER,
+    WANING_CRESCENT,
+}

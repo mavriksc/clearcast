@@ -1,0 +1,60 @@
+.daily-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.daily-card {
+  background: #101824;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  display: grid;
+  gap: 8px;
+  text-align: center;
+}
+
+.daily-label {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.daily-card img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.daily-temps {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.daily-card .temp-high {
+  color: #f07a8c;
+}
+
+.daily-card .temp-high.hot {
+  color: #ff3434;
+}
+
+.daily-card .temp-low {
+  color: #41d4ff;
+}
+
+.daily-card .temp-low.cold {
+  color: #e6eef3;
+}
+
+.daily-precip {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.precip-icon {
+  margin-left: 6px;
+  font-size: 1.05rem;
+}

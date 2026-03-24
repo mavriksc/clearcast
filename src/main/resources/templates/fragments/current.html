@@ -1,39 +1,29 @@
 <section class="card current" th:fragment="currentCard(current)">
-  <div class="current-top">
+  <div class="current-header" th:text="${current.locationName}">City, State</div>
+  <div class="current-row">
     <div>
       <div class="tag" th:text="${current.isDaytime} ? 'Daytime' : 'Night'">Daytime</div>
-      <h2 class="current-temp">
-        <span th:text="${#numbers.formatDecimal(current.temperatureF, 0, 0)}">0</span>°F
-      </h2>
+      <div class="current-temp">
+        <span th:text="${#numbers.formatDecimal(current.temperatureF, 0, 0)}">0</span>&#176;F
+        <span class="temp-estimate" th:if="${estimatedTempText != null and !estimatedTempText.isBlank()}"
+          th:text="${estimatedTempText}">(70&#176;F)</span>
+      </div>
     </div>
     <div class="current-icon" th:if="${current.icon != null and !current.icon.isBlank()}">
-      <div class="current-condition" th:text="${current.condition}">
-        Clear
-      </div>
+      <div class="current-condition" th:text="${current.condition}">Clear</div>
       <a th:href="${current.icon}" target="_blank" rel="noopener">
         <img th:src="${current.icon}" alt="Current conditions icon" />
       </a>
     </div>
-    <div class="current-location" th:text="${current.locationName}">
-      Location
-    </div>
   </div>
-  <div class="meta">
-    <span>
-      Feels Like:
-      <strong th:text="${current.feelsLikeF != null} ? ${#numbers.formatDecimal(current.feelsLikeF, 0, 0)} + '°F' : '—'">—</strong>
-    </span>
+  <div class="current-stats">
     <span>
       Humidity:
-      <strong th:text="${current.humidityPercent != null} ? ${current.humidityPercent} + '%' : '—'">—</strong>
+      <strong th:text="${current.humidityPercent != null} ? ${current.humidityPercent} + '%' : '-'">-</strong>
     </span>
     <span>
       Wind:
-      <strong th:text="${current.windMph != null} ? ${#numbers.formatDecimal(current.windMph, 0, 0)} + ' mph' : '—'">—</strong>
-    </span>
-    <span>
-      Updated:
-      <strong th:text="${currentUpdatedAt}">Unknown</strong>
+      <strong th:text="${current.windMph != null} ? ${#numbers.formatDecimal(current.windMph, 0, 0)} + ' mph' : '-'">-</strong>
     </span>
   </div>
 </section>

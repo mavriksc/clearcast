@@ -1,0 +1,41 @@
+<section class="card" th:fragment="dailyCard(daily)">
+  <h2>5 Day Forecast</h2>
+  <div class="daily-grid" th:if="${daily != null}">
+    <div class="daily-card" th:each="day, stat : ${daily.days}">
+      <div class="daily-label" th:text="${dailyLabels[stat.index]}">Mon 01/01</div>
+      <img th:src="${day.icon}" alt="Daily icon" />
+      <div class="daily-temps">
+        <span
+          class="temp-high"
+          th:classappend="${day.highF} &gt;= 100 ? ' hot' : ''"
+          th:style="'color: ' + (${day.highF} &gt;= 100 ? '#ff3434' : '#f07a8c')"
+          th:text="${#numbers.formatDecimal(day.highF, 0, 0)} + '&#176;'">0&#176;</span>
+        <span
+          class="temp-low"
+          th:classappend="${day.lowF} &lt;= 32 ? ' cold' : ''"
+          th:style="'color: ' + (${day.lowF} &lt;= 32 ? '#e6eef3' : '#41d4ff')"
+          th:text="${#numbers.formatDecimal(day.lowF, 0, 0)} + '&#176;'">0&#176;</span>
+      </div>
+      <div class="daily-precip">
+        <span th:text="${day.precipChancePercent != null} ? ${day.precipChancePercent} + '%' : '&mdash;'">
+          &mdash;
+        </span>
+        <span class="precip-icon" th:if="${day.precipChancePercent != null}">
+          <span th:if="${day.precipChancePercent &lt; 10}">&#9728;</span>
+          <span th:if="${day.precipChancePercent &gt;= 10 and day.precipChancePercent &lt; 33}">&#9925;</span>
+          <span th:if="${day.precipChancePercent &gt;= 33 and day.precipChancePercent &lt;= 50}">&#9729;</span>
+          <span th:if="${day.precipChancePercent &gt; 50}">
+            <span th:switch="${day.precipTypes[0]}">
+              <span th:case="'RAIN'">&#127783;</span>
+              <span th:case="'SNOW'">&#10052;</span>
+              <span th:case="'SLEET'">&#127784;</span>
+              <span th:case="'HAIL'">&#127785;</span>
+              <span th:case="'MIX'">&#127784;</span>
+              <span th:case="*">&#9729;</span>
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
