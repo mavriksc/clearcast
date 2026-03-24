@@ -9,6 +9,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.jsonObject
 import java.nio.file.Files
 import java.nio.file.Path
 import java.time.Clock
@@ -17,6 +19,7 @@ import java.time.Duration
 import org.mavriksc.clearcast.AlertSeverity
 import org.mavriksc.clearcast.AlertUrgency
 import org.mavriksc.clearcast.AlertsCard
+import org.mavriksc.clearcast.ConditionTheme
 import org.mavriksc.clearcast.CurrentConditionsCard
 import org.mavriksc.clearcast.DailyForecastCard
 import org.mavriksc.clearcast.DailyForecastPoint
@@ -49,7 +52,7 @@ data class NextFetchTimes(
 class WeatherService(
     private val api: WeatherGovService,
     private val clock: Clock = Clock.systemUTC(),
-    private val json: Json = Json { prettyPrint = true; encodeDefaults = true },
+    private val json: Json = Json { prettyPrint = true; encodeDefaults = true; ignoreUnknownKeys = true },
 ) {
     private val _currentFlow = MutableStateFlow<CurrentConditionsCard?>(null)
     private val _hourlyFlow = MutableStateFlow<HourlyForecastCard?>(null)
@@ -68,6 +71,7 @@ class WeatherService(
     fun start(config: RefreshConfig, dataDir: Path): CoroutineScope {
         val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
         loadCache(dataDir)
+        loadSampleResponses(Path.of("responses"))
         scheduleFetches(scope, config, dataDir)
         return scope
     }
@@ -150,6 +154,43 @@ class WeatherService(
         )
         Files.writeString(cacheFile, json.encodeToString(CachedWeather.serializer(), cached))
     }
+
+    private fun loadSampleResponses(sampleDir: Path) {
+        if (!Files.exists(sampleDir)) {
+            return
+        }
+
+        val points = readJson(sampleDir.resolve("points.json"))
+        val hourly = readJson(sampleDir.resolve("forecast-hourly.json"))
+        val daily = readJson(sampleDir.resolve("forecast.json"))
+        val alerts = readJson(sampleDir.resolve("alerts.json"))
+
+        if (points == null || hourly == null || daily == null) {
+            return
+        }
+
+        val pointsInfo = parsePoints(points)
+        if (_hourlyFlow.value == null) {
+            _hourlyFlow.value = parseHourlyForecast(hourly, pointsInfo.timeZone)
+        }
+        if (_dailyFlow.value == null) {
+            _dailyFlow.value = parseDailyForecast(daily, pointsInfo.timeZone)
+        }
+        if (_currentFlow.value == null) {
+            _currentFlow.value = parseCurrentFromHourlyJson(hourly, pointsInfo.locationName)
+        }
+        if (_alertsFlow.value == null && alerts != null) {
+            _alertsFlow.value = parseAlerts(alerts)
+        }
+    }
+
+    private fun readJson(path: Path): JsonObject? {
+        if (!Files.exists(path)) {
+            return null
+        }
+        val content = Files.readString(path)
+        return json.parseToJsonElement(content).jsonObject
+    }
 }
 
 @Serializable
@@ -188,7 +229,7 @@ data class CachedCurrentConditionsCard(
     val icon: String,
     val isDaytime: Boolean,
     val observedAtEpochMs: Long,
-    val backgroundKey: String,
+    val conditionTheme: ConditionTheme = ConditionTheme.OTHER,
 ) {
     fun toDomain(): CurrentConditionsCard = CurrentConditionsCard(
         locationName = locationName,
@@ -200,7 +241,7 @@ data class CachedCurrentConditionsCard(
         icon = icon,
         isDaytime = isDaytime,
         observedAt = Instant.ofEpochMilli(observedAtEpochMs),
-        backgroundKey = backgroundKey,
+        conditionTheme = conditionTheme,
     )
 }
 
@@ -328,7 +369,7 @@ private fun CurrentConditionsCard.toCache(): CachedCurrentConditionsCard = Cache
     icon = icon,
     isDaytime = isDaytime,
     observedAtEpochMs = observedAt.toEpochMilli(),
-    backgroundKey = backgroundKey,
+    conditionTheme = conditionTheme,
 )
 
 private fun HourlyForecastCard.toCache(): CachedHourlyForecastCard = CachedHourlyForecastCard(

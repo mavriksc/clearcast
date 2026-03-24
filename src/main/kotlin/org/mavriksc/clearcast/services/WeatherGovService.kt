@@ -1,13 +1,18 @@
 package org.mavriksc.clearcast.services
 
-import io.github.cdimascio.dotenv.dotenv
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.jsonObject
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
+import java.nio.file.Files
+import java.nio.file.Path
 import java.time.Duration
+import kotlinx.serialization.json.JsonElement
+import kotlinx.serialization.json.jsonArray
+import kotlinx.serialization.json.jsonPrimitive
+import org.mavriksc.clearcast.loadEnv
 
 class WeatherGovService(
     private val client: OkHttpClient,
@@ -66,7 +71,7 @@ class WeatherGovService(
 
     companion object {
         fun fromEnv(): WeatherGovService {
-            val env = dotenv { ignoreIfMissing = true }
+            val env = loadEnv()
             val userAgent = env["NWS_USER_AGENT"] ?: System.getenv("NWS_USER_AGENT")
             require(!userAgent.isNullOrBlank()) {
                 "NWS_USER_AGENT must be set (example: \"Clearcast (contact: you@example.com)\")"
@@ -83,5 +88,89 @@ class WeatherGovService(
 
             return WeatherGovService(client)
         }
+    }
+}
+
+fun main() {
+    val env = loadEnv()
+    val lat = env["LAT"] ?: System.getenv("LAT")
+    val lon = env["LON"] ?: System.getenv("LON")
+    val zip = env["ZIP_CODE"] ?: System.getenv("ZIP_CODE")
+
+    val latLon = parseLatLon(lat, lon)
+    val (resolvedLat, resolvedLon) = when {
+        latLon != null -> latLon
+        !zip.isNullOrBlank() -> resolveLatLonFromZip(zip)
+        else -> throw IllegalArgumentException(
+            "Set ZIP_CODE or LAT/LON in .env (example: ZIP_CODE=75234 or LAT=32.9618, LON=-96.8292)"
+        )
+    }
+
+    val service = WeatherGovService.fromEnv()
+    val responsesDir = Path.of("responses")
+    Files.createDirectories(responsesDir)
+
+    val points = service.getPoints(resolvedLat, resolvedLon)
+    writeJson(responsesDir.resolve("points.json"), points)
+
+    val props = points["properties"]?.jsonObject
+    val forecastUrl = props?.get("forecast")?.jsonPrimitive?.content
+    val forecastHourlyUrl = props?.get("forecastHourly")?.jsonPrimitive?.content
+
+    if (!forecastUrl.isNullOrBlank()) {
+        val forecast = service.getForecast(forecastUrl)
+        writeJson(responsesDir.resolve("forecast.json"), forecast)
+    }
+
+    if (!forecastHourlyUrl.isNullOrBlank()) {
+        val hourly = service.getForecastHourly(forecastHourlyUrl)
+        writeJson(responsesDir.resolve("forecast-hourly.json"), hourly)
+    }
+
+    val stateFromEnv = env["STATE"] ?: System.getenv("STATE")
+    val stateFromPoints = props
+        ?.get("relativeLocation")
+        ?.jsonObject
+        ?.get("properties")
+        ?.jsonObject
+        ?.get("state")
+        ?.jsonPrimitive
+        ?.content
+    val state = stateFromEnv ?: stateFromPoints
+
+    if (!state.isNullOrBlank()) {
+        val alerts = service.getAlertsByState(state)
+        writeJson(responsesDir.resolve("alerts.json"), alerts)
+    }
+}
+
+private fun writeJson(path: Path, json: JsonElement) {
+    Files.writeString(path, json.toString())
+}
+
+private fun parseLatLon(lat: String?, lon: String?): Pair<Double, Double>? {
+    val latValue = lat?.toDoubleOrNull()
+    val lonValue = lon?.toDoubleOrNull()
+    return if (latValue != null && lonValue != null) latValue to lonValue else null
+}
+
+private fun resolveLatLonFromZip(zip: String): Pair<Double, Double> {
+    val url = "https://api.zippopotam.us/us/$zip"
+    val client = OkHttpClient()
+    val request = Request.Builder().url(url).build()
+    val response = client.newCall(request).execute()
+    response.use {
+        if (!it.isSuccessful) {
+            throw IOException("zip lookup failed (${it.code}) for $zip")
+        }
+        val body = it.body?.string() ?: throw IOException("zip lookup empty body for $zip")
+        val json = Json.parseToJsonElement(body).jsonObject
+        val places = json["places"]?.jsonArray ?: throw IOException("zip lookup missing places for $zip")
+        val first = places.firstOrNull()?.jsonObject ?: throw IOException("zip lookup empty places for $zip")
+        val lat = first["latitude"]?.jsonPrimitive?.content?.toDoubleOrNull()
+            ?: throw IOException("zip lookup missing latitude for $zip")
+        val lon = first["longitude"]?.jsonPrimitive?.content?.toDoubleOrNull()
+            ?: throw IOException("zip lookup missing longitude for $zip")
+        return lat to lon
     }
 }

@@ -1,6 +1,5 @@
 package org.mavriksc.clearcast
 
-import io.github.cdimascio.dotenv.dotenv
 import io.ktor.server.application.Application
 import io.ktor.server.application.install
 import io.ktor.server.engine.embeddedServer
@@ -37,7 +36,7 @@ fun Application.module() {
 }
 
 private fun loadRefreshConfig(): RefreshConfig {
-    val env = dotenv { ignoreIfMissing = true }
+    val env = loadEnv()
     fun getSeconds(name: String, defaultSeconds: Long): Long {
         val raw = env[name] ?: System.getenv(name)
         return raw?.toLongOrNull() ?: defaultSeconds

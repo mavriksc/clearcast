@@ -12,7 +12,7 @@ data class CurrentConditionsCard(
     val icon: String,
     val isDaytime: Boolean,
     val observedAt: Instant,
-    val backgroundKey: String,
+    val conditionTheme: ConditionTheme,
 )
 
 data class HourlyForecastCard(
@@ -96,4 +96,18 @@ enum class AlertUrgency {
     EXPECTED,
     FUTURE,
     PAST,
+}
+
+enum class ConditionTheme {
+    CLEAR,
+    SUNNY,
+    PARTLY_CLOUDY,
+    CLOUDY,
+    RAIN,
+    SNOW,
+    STORM,
+    FOG,
+    WINDY,
+    HAZE,
+    OTHER,
 }

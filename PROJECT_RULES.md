@@ -32,7 +32,7 @@
 
 ## Configuration ⚙️
 - All secrets (API keys) must be read from environment variables or a local config file ignored by git.
-- ZIP code is configured via environment variable.
+- ZIP code is configured via the `ZIP_CODE` environment variable.
 - Refresh cadence is configured via environment variables and exposed to HTMX on page load.
 - Provide a sample config file with placeholders.
 - Load `.env` from project root if present to populate configuration.

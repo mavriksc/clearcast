@@ -45,6 +45,21 @@ Choose **Ktor**.
 - Background imagery mapped to condition + day/night.
 - Color and contrast meet accessibility minimums.
 
+## Condition Themes 🧩
+- `ConditionTheme` enum powers theme art selection; day/night is handled separately.
+- The NWS `shortForecast` field is treated as free text; we map keywords to themes.
+- Examples from current responses:
+  - Clear, Mostly Clear → `CLEAR`
+  - Sunny, Mostly Sunny → `SUNNY`
+  - Partly Cloudy, Partly Sunny → `PARTLY_CLOUDY`
+  - Mostly Cloudy, Cloudy, Overcast → `CLOUDY`
+  - Rain, Showers → `RAIN`
+  - Snow → `SNOW`
+  - Thunderstorms → `STORM`
+  - Fog, Mist → `FOG`
+  - Windy, Breezy → `WINDY`
+  - Haze, Smoke → `HAZE`
+
 ## Config and Secrets 🔐
 - `.env` or local config file (ignored by git) with provider API keys.
 - `config.example` checked in with placeholders.

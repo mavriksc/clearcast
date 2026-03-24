@@ -4,36 +4,137 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clearcast</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b1017;
+        --panel: #131a24;
+        --panel-strong: #182233;
+        --accent: #41d4ff;
+        --accent-strong: #7ff2ff;
+        --text: #f4f7ff;
+        --muted: #b7c0d6;
+        --border: #243247;
+        --shadow: rgba(0, 0, 0, 0.4);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Noto Sans", "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top, #162235, var(--bg));
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 48px 24px;
+        display: grid;
+        gap: 24px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.25rem;
+        letter-spacing: 0.02em;
+      }
+
+      header p {
+        margin: 8px 0 0;
+        color: var(--muted);
+      }
+
+      .card {
+        background: linear-gradient(160deg, var(--panel), var(--panel-strong));
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 18px 40px var(--shadow);
+      }
+
+      .current {
+        display: grid;
+        gap: 12px;
+      }
+
+      .current-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .current-location {
+        font-size: 2.1rem;
+        color: var(--muted);
+      }
+
+      .current-temp {
+        font-size: 3.5rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--accent-strong);
+      }
+
+      .current-condition {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+      }
+
+      .meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        color: var(--muted);
+      }
+
+      .meta span {
+        display: block;
+        font-size: 0.95rem;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(65, 212, 255, 0.35);
+        color: var(--accent);
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+      }
+
+      .current-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 8px 0;
+      }
+
+      .current-icon img {
+        width: 112px;
+        height: 112px;
+        object-fit: contain;
+        image-rendering: auto;
+      }
+    </style>
   </head>
   <body>
-    <h1>Welcome to the jungle</h1>
-    <p>
-      ZIP:
-      <span th:text="${zip}">UNKNOWN</span>
-    </p>
-    <p>
-      DELAY_FOR_RENDER:
-      <span th:text="${delayForRender}">0</span>
-    </p>
-    <p>
-      NWS_USER_AGENT:
-      <span th:text="${nwsUserAgent}">MISSING</span>
-    </p>
-    <p>
-      NEXT_CURRENT_FETCH:
-      <span th:text="${nextFetchCurrent}">UNKNOWN</span>
-    </p>
-    <p>
-      NEXT_RADAR_FETCH:
-      <span th:text="${nextFetchRadar}">UNKNOWN</span>
-    </p>
-    <p>
-      NEXT_DAILY_FETCH:
-      <span th:text="${nextFetchDaily}">UNKNOWN</span>
-    </p>
-    <p>
-      NEXT_ALERTS_FETCH:
-      <span th:text="${nextFetchAlerts}">UNKNOWN</span>
-    </p>
+    <main>
+      <header>
+        <h1>Clearcast</h1>
+        <p>Welcome to the jungle</p>
+      </header>
+
+      <section class="card current" th:replace="~{fragments/current :: currentCard(${current})}"></section>
+    </main>
   </body>
 </html>
