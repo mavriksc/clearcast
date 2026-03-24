@@ -9,9 +9,10 @@
           th:text="${estimatedTempText}">(70&#176;F)</span>
       </div>
     </div>
-    <div class="current-icon" th:if="${current.icon != null and !current.icon.isBlank()}">
+    <div class="current-icon">
       <div class="current-condition" th:text="${current.condition}">Clear</div>
-      <a th:href="${current.icon}" target="_blank" rel="noopener">
+      <a th:if="${current.icon != null and !current.icon.isBlank()}"
+        th:href="${current.icon}" target="_blank" rel="noopener">
         <img th:src="${current.icon}" alt="Current conditions icon" />
       </a>
     </div>

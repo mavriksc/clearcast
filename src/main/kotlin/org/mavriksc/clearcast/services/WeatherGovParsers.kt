@@ -5,6 +5,7 @@ import java.time.LocalDate
 import java.time.OffsetDateTime
 import java.time.ZoneId
 import java.time.ZonedDateTime
+import java.time.temporal.ChronoUnit
 import kotlin.math.roundToInt
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
@@ -55,9 +56,8 @@ fun parseHourlyForecast(hourly: JsonObject, zone: ZoneId): HourlyForecastCard {
     val props = hourly.obj("properties")
     val generatedAt = props.str("generatedAt")?.toInstant() ?: Instant.now()
     val periods = props.array("periods")
-    val hours = periods
+    val rawHours = periods
         .mapNotNull { it.objOrNull() }
-        .take(24)
         .map { period ->
             val time = period.str("startTime")?.toInstant() ?: Instant.now()
             val temp = period.num("temperature") ?: 0.0
@@ -72,6 +72,11 @@ fun parseHourlyForecast(hourly: JsonObject, zone: ZoneId): HourlyForecastCard {
                 icon = icon,
             )
         }
+    val currentHour = ZonedDateTime.now(zone).truncatedTo(ChronoUnit.HOURS).toInstant()
+    val hours = rawHours
+        .filter { !it.time.isBefore(currentHour) }
+        .take(24)
+        .ifEmpty { rawHours.take(24) }
 
     return HourlyForecastCard(
         generatedAt = generatedAt,

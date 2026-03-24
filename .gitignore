@@ -1,6 +1,7 @@
 data/
 responses/
 .env
+chat-history
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
