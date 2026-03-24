@@ -679,9 +679,9 @@
     },
     "radar": null,
     "nextFetch": {
-        "currentAtEpochMs": 1774373855042,
-        "radarAtEpochMs": 1774377155042,
-        "dailyAtEpochMs": 1774459955042,
-        "alertsAtEpochMs": 1774459955042
+        "currentAtEpochMs": 1774376707642,
+        "radarAtEpochMs": 1774380007642,
+        "dailyAtEpochMs": 1774462807642,
+        "alertsAtEpochMs": 1774462807642
     }
 }

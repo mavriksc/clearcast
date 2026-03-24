@@ -12,10 +12,12 @@ import org.mavriksc.clearcast.CurrentConditionsCard
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
+import java.util.Locale
 
 fun Application.configureControllers(weatherService: WeatherService) {
     val dallasZone = ZoneId.of("America/Chicago")
     val updatedFormatter = DateTimeFormatter.ofPattern("MMM d, yyyy h:mm a")
+    val hourFormatter = DateTimeFormatter.ofPattern("h a", Locale.US).withZone(dallasZone)
     routing {
         get("/") {
             val current = weatherService.currentFlow.value
@@ -35,11 +37,47 @@ fun Application.configureControllers(weatherService: WeatherService) {
             val observedAt = current.observedAt ?: Instant.now()
             val updatedAt = updatedFormatter.format(observedAt.atZone(dallasZone))
 
-            val model = mapOf(
+            val model: Map<String, Any> = mapOf(
                 "current" to current,
                 "currentUpdatedAt" to updatedAt,
+                "hourly" to (weatherService.hourlyFlow.value ?: ""),
+                "hourlyTimes" to buildHourlyTimesList(weatherService, hourFormatter),
+                "hourlyTemps" to buildHourlyTempsList(weatherService),
+                "hourlyPrecip" to buildHourlyPrecipList(weatherService),
+                "hourlyYMin" to buildHourlyYMin(weatherService),
+                "hourlyYMax" to buildHourlyYMax(weatherService),
             )
             call.respond(ThymeleafContent("index", model))
         }
     }
+}
+
+private fun buildHourlyTimesList(
+    weatherService: WeatherService,
+    formatter: DateTimeFormatter,
+): List<String> {
+    val hours = weatherService.hourlyFlow.value?.hours ?: emptyList()
+    return hours.map { formatter.format(it.time).replace(" ", "") }
+}
+
+private fun buildHourlyTempsList(weatherService: WeatherService): List<Int> {
+    val hours = weatherService.hourlyFlow.value?.hours ?: emptyList()
+    return hours.map { it.temperatureF.toInt() }
+}
+
+private fun buildHourlyPrecipList(weatherService: WeatherService): List<Int> {
+    val hours = weatherService.hourlyFlow.value?.hours ?: emptyList()
+    return hours.map { it.precipChancePercent ?: 0 }
+}
+
+private fun buildHourlyYMin(weatherService: WeatherService): Int {
+    val temps = weatherService.hourlyFlow.value?.hours?.map { it.temperatureF } ?: emptyList()
+    if (temps.isEmpty()) return 0
+    return temps.minOrNull()!!.toInt() - 5
+}
+
+private fun buildHourlyYMax(weatherService: WeatherService): Int {
+    val temps = weatherService.hourlyFlow.value?.hours?.map { it.temperatureF } ?: emptyList()
+    if (temps.isEmpty()) return 100
+    return temps.maxOrNull()!!.toInt() + 5
 }
