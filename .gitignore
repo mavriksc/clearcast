@@ -48,4 +48,3 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-/build-image.ps1
