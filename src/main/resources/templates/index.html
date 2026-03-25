@@ -14,17 +14,20 @@
   </head>
   <body>
     <main>
-      <header>
-        <div class="title-row">
-          <h1>Clearcast</h1>
-          <span class="alerts-badge" th:if="${alertsCount > 0}">&#xF0D59;</span>
-        </div>
-        <p th:text="'Last updated: ' + ${currentUpdatedAt}">Last updated:</p>
-      </header>
-
       <section class="top-row">
-        <div th:replace="~{fragments/current :: currentCard(${current})}"></div>
-        <div th:replace="~{fragments/radar :: radarCard(${radarFrames})}"></div>
+        <div class="top-left">
+          <header>
+            <div class="title-row">
+              <h1>Clearcast</h1>
+              <span class="alerts-badge" th:if="${alertsCount > 0}">&#xF0D59;</span>
+            </div>
+            <p th:text="'Last updated: ' + ${currentUpdatedAt}">Last updated:</p>
+          </header>
+          <div th:replace="~{fragments/current :: currentCard(${current})}"></div>
+        </div>
+        <div class="top-right">
+          <div th:replace="~{fragments/radar :: radarCard(${radarFrames})}"></div>
+        </div>
       </section>
       <section class="card" th:replace="~{fragments/hourly :: hourlyCard(${hourly})}"></section>
       <section class="card" th:replace="~{fragments/daily :: dailyCard(${daily})}"></section>

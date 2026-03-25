@@ -66,6 +66,18 @@ header p {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   gap: 24px;
+  align-items: start;
+}
+
+.top-left {
+  display: grid;
+  gap: 24px;
+  align-content: start;
+}
+
+.top-right {
+  display: grid;
+  align-content: start;
 }
 
 @media (max-width: 900px) {
