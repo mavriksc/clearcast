@@ -1,0 +1,52 @@
+# Required: set either LAT/LON or ZIP_CODE. If ZIP_CODE is set and LAT/LON are missing,
+# the app will compute LAT/LON and write them into your .env.
+ZIP_CODE=00000
+LAT=0.0
+LON=0.0
+
+# Required by api.weather.gov: include contact info in the User-Agent.
+NWS_USER_AGENT=Clearcast (contact:your.email@example.com)
+
+# Optional: wipe cached files under data/ and responses/ on startup.
+CLEAR_CACHE=false
+
+# Optional: alert area filters. Sensitive matches are case-sensitive, insensitive matches ignore case.
+ALERT_FILTER=WA
+ALERT_FILTER_INSENSITIVE=spokane,spokane valley,airway heights,cheney,medical lake,liberty lake,millwood,mead,colbert,nine mile falls,otis orchards,green bluff,fairfield,deer park,newport,post falls,coeur d'alene,rathdrum,hayden,dalton gardens,tornado,severe thunderstorm,thunderstorm,hail,blizzard,winter storm,ice storm,freezing rain,heavy snow,high wind,wind advisory,red flag,fire weather,smoke,air quality,flood,flash flood,heat advisory,excessive heat,wind chill,dense fog
+
+# Optional: refresh cadences (seconds).
+REFRESH_CURRENT_SEC=1200
+REFRESH_HOURLY_SEC=3600
+REFRESH_RADAR_SEC=3600
+REFRESH_DAILY_SEC=86400
+REFRESH_ALERTS_SEC=3600
+
+# Optional: radar provider selection. Use "wms" or "ridge".
+RADAR_PROVIDER=wms
+
+# Optional: used only when RADAR_PROVIDER=ridge. If missing, we'll infer from points.json or default to KFWS.
+RADAR_STATION=KTLX
+
+# Optional: WMS radar settings (used when RADAR_PROVIDER=wms).
+RADAR_WMS_URL=https://opengeo.ncep.noaa.gov/geoserver/conus/conus_bref_qcd/wms
+RADAR_WMS_LAYER=conus_bref_qcd
+RADAR_WMS_STYLE=radar_reflectivity
+RADAR_WMS_WIDTH=700
+RADAR_WMS_HEIGHT=700
+RADAR_WMS_FORMAT=image/png
+RADAR_WMS_TRANSPARENT=true
+RADAR_WMS_FRAME_MIN=15
+RADAR_WMS_FRAMES=12
+RADAR_WMS_ZOOM=2.0
+RADAR_WMS_SPAN_DEG=6.0
+RADAR_GIF_DELAY_CS=100
+
+# Optional: basemap WMS used for compositing behind radar frames.
+RADAR_BASE_WMS_URL=https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer
+RADAR_BASE_WMS_LAYER=0
+RADAR_BASE_WMS_STYLE=default
+RADAR_BASE_WMS_FORMAT=image/png
+
+# Optional: radar compositing behavior.
+RADAR_WMS_OPACITY=0.8
+RADAR_WMS_FALLBACK=false

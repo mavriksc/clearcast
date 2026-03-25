@@ -73,18 +73,20 @@ Choose **Ktor**.
 - Basic HTML fragment tests for current/hourly/daily rendering.
 
 ## Implementation Steps ✅
-1. Ktor skeleton with routing, templating, and static assets.
-2. Provider interface + a first weather provider implementation.
-3. Domain normalization + caching layer.
+1. Ktor skeleton with routing, templating, and static assets. âœ…
+2. Provider interface + a first weather provider implementation. âœ…
+3. Domain normalization + caching layer. âœ…
 4. HTML templates and HTMX endpoints.
-5. Radar animation integration and graceful fallbacks.
-6. Waybar endpoint/CLI.
-7. Tests and sample config.
+5. Radar animation integration and graceful fallbacks. âœ…
+6. Waybar endpoint/CLI (covered by `/api/current-emoji` for now). âœ…
+7. Sample config. âœ…
 
 ## Open Decisions ❓
 - Select initial weather/radar provider and confirm data licensing.
-- Decide whether waybar output is via HTTP endpoint or CLI script.
+- Decide whether waybar output is via HTTP endpoint or CLI script (covered by `/api/current-emoji` for now).
 - Confirm radar source for past frames and whether "future radar" means nowcast data from a different provider.
+- Decide on optional cloud/satellite overlays and placement (radar overlay vs separate satellite card).
+- Optional cloud/satellite data sources to evaluate: NOAA nowCOAST GOES WMS; NASA GOES GIS WMS.
 
 ## Provider Notes (api.weather.gov) 📡
 - No API key required today; a descriptive `User-Agent` is required and should include contact info.
