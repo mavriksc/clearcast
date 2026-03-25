@@ -1,0 +1,10 @@
+.env
+.git
+.gitignore
+.gradle
+.idea
+build
+data
+responses
+chat-history
+PLAN.md
