@@ -33,6 +33,17 @@ fun loadEnv(): Dotenv {
     return dotenv { ignoreIfMissing = true }
 }
 
+fun clearCacheOnStartupIfRequested() {
+    val env = loadEnv()
+    val raw = env["CLEAR_CACHE"] ?: System.getenv("CLEAR_CACHE")
+    val shouldClear = raw?.trim()?.lowercase() in setOf("1", "true", "yes", "y")
+    if (!shouldClear) {
+        return
+    }
+    deleteDirectoryIfExists(Path.of("data"))
+    deleteDirectoryIfExists(Path.of("responses"))
+}
+
 fun findEnvFileOrRoot(): Path {
     var dir: Path? = Paths.get("").toAbsolutePath()
     while (dir != null) {
@@ -171,4 +182,13 @@ private fun updateEnvLatLon(lat: Double, lon: Double) {
     if (!latSet) lines.add("LAT=$lat")
     if (!lonSet) lines.add("LON=$lon")
     Files.writeString(envFile, lines.joinToString("\n", postfix = "\n"), java.nio.file.StandardOpenOption.CREATE, java.nio.file.StandardOpenOption.TRUNCATE_EXISTING)
+}
+
+private fun deleteDirectoryIfExists(path: Path) {
+    if (!Files.exists(path)) {
+        return
+    }
+    Files.walk(path)
+        .sorted(Comparator.reverseOrder())
+        .forEach { Files.deleteIfExists(it) }
 }

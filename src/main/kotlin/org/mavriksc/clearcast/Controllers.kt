@@ -46,13 +46,10 @@ fun Application.configureControllers(weatherService: WeatherService) {
                 now = Instant.now(),
             )
 
-            val model: Map<String, Any> = mapOf(
+            val model = mutableMapOf<String, Any>(
                 "current" to current,
                 "currentUpdatedAt" to updatedAt,
                 "estimatedTempText" to (estimatedTempText ?: ""),
-                "hourly" to (weatherService.hourlyFlow.value ?: ""),
-                "daily" to (weatherService.dailyFlow.value ?: ""),
-                "alerts" to (weatherService.alertsFlow.value ?: ""),
                 "alertsCount" to (weatherService.alertsFlow.value?.alerts?.size ?: 0),
                 "alertAreas" to buildAlertAreas(weatherService),
                 "dailyLabels" to buildDailyLabels(weatherService),
@@ -63,6 +60,9 @@ fun Application.configureControllers(weatherService: WeatherService) {
                 "hourlyYMin" to buildHourlyYMin(weatherService),
                 "hourlyYMax" to buildHourlyYMax(weatherService),
             )
+            weatherService.hourlyFlow.value?.let { model["hourly"] = it }
+            weatherService.dailyFlow.value?.let { model["daily"] = it }
+            weatherService.alertsFlow.value?.let { model["alerts"] = it }
             call.respond(ThymeleafContent("index", model))
         }
 

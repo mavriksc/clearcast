@@ -8,6 +8,7 @@ import io.ktor.server.thymeleaf.Thymeleaf
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
 import org.mavriksc.clearcast.services.RefreshConfig
 import org.mavriksc.clearcast.services.RadarRidgeService
+import org.mavriksc.clearcast.services.RadarWmsService
 import org.mavriksc.clearcast.services.WeatherGovService
 import org.mavriksc.clearcast.services.WeatherService
 import java.nio.file.Paths
@@ -18,6 +19,7 @@ fun main() {
 }
 
 fun Application.module() {
+    clearCacheOnStartupIfRequested()
     ensureLatLonFromZip()
     install(Thymeleaf) {
         setTemplateResolver(ClassLoaderTemplateResolver().apply {
@@ -33,6 +35,7 @@ fun Application.module() {
     val weatherService = WeatherService(
         WeatherGovService.fromEnv(),
         RadarRidgeService(buildRadarClient()),
+        RadarWmsService.fromEnv(buildRadarClient()),
     )
     val scope = weatherService.start(config, Paths.get("data"))
     environment.monitor.subscribe(io.ktor.server.application.ApplicationStopping) {

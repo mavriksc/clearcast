@@ -60,6 +60,7 @@ data class NextFetchTimes(
 class WeatherService(
     private val api: WeatherGovService,
     private val radar: RadarRidgeService,
+    private val radarWms: RadarWmsService,
     private val clock: Clock = Clock.systemUTC(),
     private val json: Json = Json { prettyPrint = true; encodeDefaults = true; ignoreUnknownKeys = true },
 ) {
@@ -69,6 +70,7 @@ class WeatherService(
     private val _alertsFlow = MutableStateFlow<AlertsCard?>(null)
     private val _radarFlow = MutableStateFlow<RadarCard?>(null)
     private val _nextFetchFlow = MutableStateFlow(NextFetchTimes.empty())
+    private var dataDir: Path? = null
 
     val currentFlow: StateFlow<CurrentConditionsCard?> = _currentFlow
     val hourlyFlow: StateFlow<HourlyForecastCard?> = _hourlyFlow
@@ -79,12 +81,30 @@ class WeatherService(
 
     fun start(config: RefreshConfig, dataDir: Path): CoroutineScope {
         val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+        this.dataDir = dataDir
         loadCache(dataDir)
         loadSampleResponses(Path.of("responses"))
-        refreshCurrentFromObservation()
-        refreshRadar()
+        refreshMissingOnStart()
         scheduleFetches(scope, config, dataDir)
         return scope
+    }
+
+    private fun refreshMissingOnStart() {
+        if (_currentFlow.value == null) {
+            refreshCurrentFromObservation()
+        }
+        if (_hourlyFlow.value == null) {
+            refreshHourlyForecast()
+        }
+        if (_dailyFlow.value == null) {
+            refreshDailyForecast()
+        }
+        if (_alertsFlow.value == null) {
+            refreshAlerts()
+        }
+        if (_radarFlow.value == null) {
+            refreshRadar()
+        }
     }
 
     private fun scheduleFetches(scope: CoroutineScope, config: RefreshConfig, dataDir: Path) {
@@ -158,7 +178,12 @@ class WeatherService(
         _hourlyFlow.value = cached.hourly?.toDomain()
         _dailyFlow.value = cached.daily?.toDomain()
         _alertsFlow.value = sanitizeAlerts(cached.alerts?.toDomain(), alertFilters)
-        _radarFlow.value = cached.radar?.toDomain()
+        val cachedRadar = cached.radar?.toDomain()
+        _radarFlow.value = if (resolveRadarProvider() == "wms" && !allowWmsFallback()) {
+            null
+        } else {
+            cachedRadar
+        }
         _nextFetchFlow.value = cached.nextFetch?.toDomain() ?: NextFetchTimes.empty()
     }
 
@@ -238,6 +263,30 @@ class WeatherService(
         return "KFWS"
     }
 
+    private fun resolveRadarProvider(): String {
+        val env = loadEnv()
+        val raw = env["RADAR_PROVIDER"] ?: System.getenv("RADAR_PROVIDER")
+        return raw?.trim()?.lowercase() ?: "ridge"
+    }
+
+    private fun allowWmsFallback(): Boolean {
+        val env = loadEnv()
+        val raw = env["RADAR_WMS_FALLBACK"] ?: System.getenv("RADAR_WMS_FALLBACK")
+        return raw?.trim()?.lowercase() in setOf("1", "true", "yes", "y")
+    }
+
+    private fun resolveLatLon(): Pair<Double, Double>? {
+        val env = loadEnv()
+        val lat = env["LAT"] ?: System.getenv("LAT")
+        val lon = env["LON"] ?: System.getenv("LON")
+        val latValue = lat?.toDoubleOrNull()
+        val lonValue = lon?.toDoubleOrNull()
+        if (latValue == null || lonValue == null) {
+            return null
+        }
+        return latValue to lonValue
+    }
+
     private fun refreshCurrentFromObservation() {
         val pointsData = fetchPointsData() ?: return
         val stationsUrl = pointsData.observationStationsUrl
@@ -268,15 +317,41 @@ class WeatherService(
     }
 
     private fun refreshRadar() {
-        val station = resolveRadarStation()
-        val frameUrls = radar.frameUrls(station, 10)
+        val now = clock.instant()
+        val provider = resolveRadarProvider()
+        var usedWms = provider == "wms"
+        var frameUrls = if (usedWms) {
+            val latLon = resolveLatLon()
+            val dir = dataDir?.resolve("radar-wms")
+            if (latLon == null || dir == null) {
+                emptyList()
+            } else {
+                val imagesDir = Path.of("responses", "images")
+                val gif = radarWms.updateAndGetGif(latLon.first, latLon.second, imagesDir, now)
+                gif?.let { listOf("/radar/radar.gif?ts=${now.toEpochMilli()}") } ?: emptyList()
+            }
+        } else {
+            val station = resolveRadarStation()
+            radar.frameUrls(station, 10)
+        }
+
+        if (frameUrls.isEmpty() && usedWms) {
+            if (allowWmsFallback()) {
+                val station = resolveRadarStation()
+                frameUrls = radar.frameUrls(station, 10)
+                usedWms = false
+            } else {
+                _radarFlow.value = null
+                return
+            }
+        }
         if (frameUrls.isEmpty()) {
             return
         }
-        val now = clock.instant()
+        val intervalSeconds = if (usedWms) radarWms.frameIntervalSeconds() else 300L
         val frames = frameUrls.mapIndexed { index, url ->
             RadarFrame(
-                timestamp = now.minusSeconds((frameUrls.size - 1L - index) * 300L),
+                timestamp = now.minusSeconds((frameUrls.size - 1L - index) * intervalSeconds),
                 url = url,
             )
         }

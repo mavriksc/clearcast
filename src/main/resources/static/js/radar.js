@@ -15,8 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let index = 0;
   image.src = frames[0];
+  if (frames.length === 1) return;
   setInterval(() => {
     index = (index + 1) % frames.length;
     image.src = frames[index];
-  }, 600);
+  }, 1000);
 });

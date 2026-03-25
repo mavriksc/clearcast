@@ -26,6 +26,7 @@ These instructions are authoritative for agents working in this repo.
 - Mobile-first layout; desktop enhancements allowed.
 - Background images are state-driven (day/night/sunny/rain/snow/etc.) and must be accessible (contrast checked).
 - Radar animation must degrade gracefully if the provider does not support tiles or animation frames.
+- When rendering radar overlays, always composite the radar layer over a basemap to avoid fully transparent frames.
 
 ## Reliability and Error Handling
 - Never return raw provider errors to the client.
