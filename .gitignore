@@ -1,6 +1,7 @@
 data/
 responses/
 .env
+.build.env
 chat-history
 .gradle
 build/
