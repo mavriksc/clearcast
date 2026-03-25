@@ -19,6 +19,7 @@ import java.nio.file.Path
 import java.time.Clock
 import java.time.Instant
 import java.time.Duration
+import org.slf4j.LoggerFactory
 import org.mavriksc.clearcast.AlertSeverity
 import org.mavriksc.clearcast.AlertUrgency
 import org.mavriksc.clearcast.AlertFilters
@@ -64,6 +65,7 @@ class WeatherService(
     private val clock: Clock = Clock.systemUTC(),
     private val json: Json = Json { prettyPrint = true; encodeDefaults = true; ignoreUnknownKeys = true },
 ) {
+    private val logger = LoggerFactory.getLogger(WeatherService::class.java)
     private val _currentFlow = MutableStateFlow<CurrentConditionsCard?>(null)
     private val _hourlyFlow = MutableStateFlow<HourlyForecastCard?>(null)
     private val _dailyFlow = MutableStateFlow<DailyForecastCard?>(null)
@@ -81,6 +83,7 @@ class WeatherService(
 
     fun start(config: RefreshConfig, dataDir: Path): CoroutineScope {
         val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+        logger.info("WeatherService starting with data dir {}", dataDir)
         this.dataDir = dataDir
         loadCache(dataDir)
         loadSampleResponses(Path.of("responses"))
@@ -91,18 +94,23 @@ class WeatherService(
 
     private fun refreshMissingOnStart() {
         if (_currentFlow.value == null) {
+            logger.info("Current conditions missing; fetching now")
             refreshCurrentFromObservation()
         }
         if (_hourlyFlow.value == null) {
+            logger.info("Hourly forecast missing; fetching now")
             refreshHourlyForecast()
         }
         if (_dailyFlow.value == null) {
+            logger.info("Daily forecast missing; fetching now")
             refreshDailyForecast()
         }
         if (_alertsFlow.value == null) {
+            logger.info("Alerts missing; fetching now")
             refreshAlerts()
         }
         if (_radarFlow.value == null) {
+            logger.info("Radar missing; fetching now")
             refreshRadar()
         }
     }
@@ -169,6 +177,7 @@ class WeatherService(
     private fun loadCache(dataDir: Path) {
         val cacheFile = dataDir.resolve("weather-cache.json")
         if (!Files.exists(cacheFile)) {
+            logger.info("No cache found at {}", cacheFile)
             return
         }
 
@@ -184,6 +193,14 @@ class WeatherService(
         } else {
             cachedRadar
         }
+        logger.info(
+            "Loaded cache: current={}, hourly={}, daily={}, alerts={}, radar={}",
+            _currentFlow.value != null,
+            _hourlyFlow.value != null,
+            _dailyFlow.value != null,
+            _alertsFlow.value != null,
+            _radarFlow.value != null,
+        )
         _nextFetchFlow.value = cached.nextFetch?.toDomain() ?: NextFetchTimes.empty()
     }
 
@@ -319,11 +336,13 @@ class WeatherService(
     private fun refreshRadar() {
         val now = clock.instant()
         val provider = resolveRadarProvider()
+        logger.info("Refreshing radar using provider {}", provider)
         var usedWms = provider == "wms"
         var frameUrls = if (usedWms) {
             val latLon = resolveLatLon()
             val dir = dataDir?.resolve("radar-wms")
             if (latLon == null || dir == null) {
+                logger.warn("Radar WMS skipped: missing lat/lon or data dir")
                 emptyList()
             } else {
                 val imagesDir = Path.of("responses", "images")
@@ -338,14 +357,17 @@ class WeatherService(
         if (frameUrls.isEmpty() && usedWms) {
             if (allowWmsFallback()) {
                 val station = resolveRadarStation()
+                logger.warn("Radar WMS empty; falling back to Ridge station {}", station)
                 frameUrls = radar.frameUrls(station, 10)
                 usedWms = false
             } else {
+                logger.warn("Radar WMS empty and fallback disabled; skipping radar update")
                 _radarFlow.value = null
                 return
             }
         }
         if (frameUrls.isEmpty()) {
+            logger.warn("Radar refresh produced no frames")
             return
         }
         val intervalSeconds = if (usedWms) radarWms.frameIntervalSeconds() else 300L
@@ -355,6 +377,7 @@ class WeatherService(
                 url = url,
             )
         }
+        logger.info("Radar updated with {} frames", frames.size)
         _radarFlow.value = RadarCard(
             generatedAt = now,
             mode = RadarMode.PAST_ONLY,

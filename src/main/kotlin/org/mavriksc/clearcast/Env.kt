@@ -5,6 +5,7 @@ import io.github.cdimascio.dotenv.dotenv
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
+import org.slf4j.LoggerFactory
 
 fun loadEnv(): Dotenv {
     var dir: Path? = Paths.get("").toAbsolutePath()
@@ -34,12 +35,15 @@ fun loadEnv(): Dotenv {
 }
 
 fun clearCacheOnStartupIfRequested() {
+    val logger = LoggerFactory.getLogger("CacheCleanup")
     val env = loadEnv()
     val raw = env["CLEAR_CACHE"] ?: System.getenv("CLEAR_CACHE")
     val shouldClear = raw?.trim()?.lowercase() in setOf("1", "true", "yes", "y")
     if (!shouldClear) {
+        logger.info("CLEAR_CACHE not set; skipping cache cleanup")
         return
     }
+    logger.info("CLEAR_CACHE set; deleting data/ and responses/")
     deleteDirectoryIfExists(Path.of("data"))
     deleteDirectoryIfExists(Path.of("responses"))
 }

@@ -1,18 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("hourly: init");
   const dataEl = document.getElementById("hourly-data");
-  if (!dataEl) return;
+  if (!dataEl) {
+    console.log("hourly: missing data element");
+    return;
+  }
 
   let data;
   try {
     data = JSON.parse(dataEl.textContent || "{}");
-  } catch {
+  } catch (err) {
+    console.log("hourly: failed to parse data", err);
     return;
   }
 
   const times = Array.isArray(data.times) ? data.times : [];
   const temps = Array.isArray(data.temps) ? data.temps : [];
   const precip = Array.isArray(data.precip) ? data.precip : [];
-  if (times.length === 0) return;
+  if (times.length === 0) {
+    console.log("hourly: no times");
+    return;
+  }
+  console.log("hourly: points", times.length);
 
   const yMin = Number.isFinite(data.yMin) ? data.yMin : 0;
   const yMax = Number.isFinite(data.yMax) ? data.yMax : 100;
@@ -69,4 +78,5 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   Plotly.newPlot("hourly-chart", [tempTrace, precipTrace], layout, { displayModeBar: false });
+  console.log("hourly: chart rendered");
 });

@@ -19,6 +19,7 @@ import kotlin.math.min
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.mavriksc.clearcast.loadEnv
+import org.slf4j.LoggerFactory
 
 data class RadarWmsConfig(
     val baseUrl: String,
@@ -44,6 +45,7 @@ class RadarWmsService(
     private val client: OkHttpClient,
     private val config: RadarWmsConfig,
 ) {
+    private val logger = LoggerFactory.getLogger(RadarWmsService::class.java)
     private var cachedTimes: List<Instant> = emptyList()
     private var cachedTimesAt: Instant? = null
     private val timesCacheTtlSeconds = 300L
@@ -107,6 +109,10 @@ class RadarWmsService(
         Files.createDirectories(targetDir)
         val bbox = buildBbox(lat, lon)
         val timestamps = selectFrameTimes(now)
+        if (timestamps.isEmpty()) {
+            logger.warn("WMS radar: no timestamps available for bbox {}", bbox)
+            return null
+        }
         val expectedNames = timestamps.map { frameFileName(it) }.toSet()
 
         Files.list(targetDir).use { stream ->
@@ -116,6 +122,9 @@ class RadarWmsService(
         }
 
         val baseImage = fetchBaseMap(bbox, targetDir)
+        if (baseImage == null) {
+            logger.warn("WMS radar: basemap fetch failed for bbox {}", bbox)
+        }
         val frames = mutableListOf<Path>()
         timestamps.forEach { instant ->
             val name = frameFileName(instant)
@@ -128,6 +137,7 @@ class RadarWmsService(
                         composeWithBase(baseImage, file, instant)
                     }
                 } catch (ex: IOException) {
+                    logger.warn("WMS radar: frame download failed for {}", url, ex)
                     if (Files.exists(file)) {
                         Files.deleteIfExists(file)
                     }
@@ -147,6 +157,7 @@ class RadarWmsService(
 
         val gifPath = targetDir.resolve("radar.gif")
         if (!writeGif(frames, gifPath)) {
+            logger.warn("WMS radar: GIF generation failed at {}", gifPath)
             return null
         }
         return if (Files.exists(gifPath)) gifPath else null
@@ -225,6 +236,7 @@ class RadarWmsService(
             val response = client.newCall(request).execute()
             val body = response.use { it.body?.string() }
             if (body.isNullOrBlank()) {
+                logger.warn("WMS radar: empty capabilities response from {}", url)
                 cachedTimes = emptyList()
                 cachedTimesAt = now
                 return emptyList()
@@ -234,6 +246,7 @@ class RadarWmsService(
             cachedTimesAt = now
             times
         } catch (ex: Exception) {
+            logger.warn("WMS radar: capabilities fetch failed from {}", url, ex)
             cachedTimes = emptyList()
             cachedTimesAt = now
             emptyList()
@@ -368,6 +381,7 @@ class RadarWmsService(
         val response = client.newCall(request).execute()
         response.use {
             if (!it.isSuccessful) {
+                logger.warn("WMS radar: request failed (status {}) for {}", it.code, url)
                 throw IOException("wms request failed (${it.code}) for $url")
             }
             val body = it.body?.bytes() ?: throw IOException("wms empty body for $url")
@@ -382,6 +396,7 @@ class RadarWmsService(
             download(url, file)
             ImageIO.read(file.toFile())
         } catch (ex: IOException) {
+            logger.warn("WMS radar: basemap download failed for {}", url, ex)
             if (Files.exists(file)) {
                 Files.deleteIfExists(file)
             }
@@ -447,7 +462,11 @@ class RadarWmsService(
     }
 
     private fun writeGif(frames: List<Path>, target: Path): Boolean {
-        val first = ImageIO.read(frames.first().toFile()) ?: return false
+        val first = ImageIO.read(frames.first().toFile())
+        if (first == null) {
+            logger.warn("WMS radar: first frame unreadable for GIF {}", frames.first())
+            return false
+        }
         val output = ImageIO.createImageOutputStream(target.toFile())
         output.use {
             val imageType = if (first.type == 0) java.awt.image.BufferedImage.TYPE_INT_ARGB else first.type
@@ -460,7 +479,11 @@ class RadarWmsService(
             )
             writer.writeToSequence(first)
             frames.drop(1).forEach { frame ->
-                val image = ImageIO.read(frame.toFile()) ?: return@forEach
+                val image = ImageIO.read(frame.toFile())
+                if (image == null) {
+                    logger.warn("WMS radar: skipping unreadable frame {}", frame)
+                    return@forEach
+                }
                 writer.writeToSequence(image)
             }
             writer.close()

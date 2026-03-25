@@ -10,12 +10,14 @@ import kotlinx.serialization.json.jsonPrimitive
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.mavriksc.clearcast.loadEnv
+import org.slf4j.LoggerFactory
 
 class RadarRidgeService(
     private val client: OkHttpClient,
     private val baseUrl: String = "https://radar.weather.gov/ridge/standard",
     private val fallbackRetryAfterSeconds: Long = 5,
 ) {
+    private val logger = LoggerFactory.getLogger(RadarRidgeService::class.java)
     fun frameUrls(station: String, frameCount: Int = 10): List<String> {
         val code = station.uppercase()
         return (0 until frameCount).map { "$baseUrl/${code}_$it.gif" }
@@ -51,6 +53,7 @@ class RadarRidgeService(
             response.close()
             val retryAfterSeconds = response.header("Retry-After")?.toLongOrNull()
                 ?: fallbackRetryAfterSeconds
+            logger.warn("Radar Ridge rate limited; retrying in {}s for {}", retryAfterSeconds, url)
             Thread.sleep(Duration.ofSeconds(retryAfterSeconds).toMillis())
             download(url, target)
             return
@@ -58,6 +61,7 @@ class RadarRidgeService(
 
         response.use {
             if (!it.isSuccessful) {
+                logger.warn("Radar Ridge request failed (status {}) for {}", it.code, url)
                 throw IOException("radar request failed (${it.code}) for $url")
             }
             val body = it.body?.bytes() ?: throw IOException("radar empty body for $url")
