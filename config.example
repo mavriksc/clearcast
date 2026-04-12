@@ -4,6 +4,10 @@ ZIP_CODE=00000
 LAT=0.0
 LON=0.0
 
+# Example:
+# ZIP_CODE=60601
+# NWS_USER_AGENT=Clearcast (contact:you@example.com)
+
 # Required by api.weather.gov: include contact info in the User-Agent.
 NWS_USER_AGENT=Clearcast (contact:your.email@example.com)
 
