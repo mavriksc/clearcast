@@ -23,10 +23,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   console.log("hourly: points", times.length);
 
+  const chart = document.getElementById("hourly-chart");
+  if (!chart) {
+    console.log("hourly: missing chart element");
+    return;
+  }
+
+  const getTickStep = () => {
+    const plotWidth = Math.max(1, chart.clientWidth - 80);
+    const targetLabelWidth = chart.clientWidth <= 600 ? 72 : 90;
+    const maxLabels = Math.max(3, Math.floor(plotWidth / targetLabelWidth));
+    return Math.max(1, Math.ceil(times.length / maxLabels));
+  };
+
+  const getTickVals = () => {
+    const step = getTickStep();
+    return times.filter((_, i) => i % step === 0);
+  };
+
   const yMin = Number.isFinite(data.yMin) ? data.yMin : 0;
   const yMax = Number.isFinite(data.yMax) ? data.yMax : 100;
-  const tickStep = Math.max(1, Math.ceil(times.length / 8));
-  const tickVals = times.filter((_, i) => i % tickStep === 0);
+  const tickStep = getTickStep();
+  const tickVals = getTickVals();
 
   const tempTrace = {
     x: times,
@@ -74,14 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
       tickfont: { color: "#b7c0d6" },
       gridcolor: "rgba(0,0,0,0)",
     },
+    showlegend: chart.clientWidth > 600,
     legend: { font: { color: "#b7c0d6" } },
   };
-
-  const chart = document.getElementById("hourly-chart");
-  if (!chart) {
-    console.log("hourly: missing chart element");
-    return;
-  }
 
   const iconRow = document.querySelector(".hourly-icons");
   const syncHourlyIcons = () => {
@@ -104,6 +117,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const resizeChart = () => {
     window.requestAnimationFrame(() => {
       Plotly.Plots.resize(chart);
+      const mobile = chart.clientWidth <= 600;
+      const tickVals = getTickVals();
+      Plotly.relayout(chart, {
+        "xaxis.tickvals": tickVals,
+        "xaxis.ticktext": tickVals,
+        "xaxis.tickangle": mobile ? -35 : 0,
+        "margin.b": mobile ? 56 : 40,
+        showlegend: !mobile,
+      });
       syncHourlyIcons();
     });
   };
