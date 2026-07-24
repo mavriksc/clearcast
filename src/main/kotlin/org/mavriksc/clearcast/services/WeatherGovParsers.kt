@@ -216,7 +216,8 @@ fun parseAlerts(alerts: JsonObject, filters: AlertFilters = loadAlertFilters()):
         .mapNotNull { it.objOrNull() }
         .mapNotNull { feature ->
             val props = feature.objOrNull("properties") ?: return@mapNotNull null
-            val title = props.str("event") ?: props.str("headline") ?: "Alert"
+            val headline = props.str("headline") ?: ""
+            val title = props.str("event") ?: headline.takeIf { it.isNotBlank() } ?: "Alert"
             val severity = props.str("severity")?.toSeverity() ?: AlertSeverity.UNKNOWN
             val urgency = props.str("urgency")?.toUrgency() ?: AlertUrgency.UNKNOWN
             val areas = props.str("areaDesc")
@@ -231,14 +232,17 @@ fun parseAlerts(alerts: JsonObject, filters: AlertFilters = loadAlertFilters()):
             val effective = props.str("effective")?.toInstant()
             val expires = props.str("expires")?.toInstant()
             val description = props.str("description") ?: ""
+            val instruction = props.str("instruction") ?: ""
             WeatherAlert(
                 title = title,
+                headline = headline,
                 severity = severity,
                 urgency = urgency,
                 areas = matchedAreas,
                 effectiveAt = effective,
                 expiresAt = expires,
                 description = description,
+                instruction = instruction,
             )
         }
 

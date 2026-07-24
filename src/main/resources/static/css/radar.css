@@ -15,3 +15,13 @@
   height: auto;
   display: block;
 }
+
+@media (max-width: 600px) {
+  .radar-card {
+    gap: 8px;
+  }
+
+  .radar-frame {
+    border-radius: 10px;
+  }
+}

@@ -11,13 +11,6 @@
   --shadow: rgba(0, 0, 0, 0.4);
 }
 
-@font-face {
-  font-family: "0xProto Nerd Font Mono";
-  src: local("0xProto Nerd Font Mono"), local("0xProto Nerd Font");
-  font-style: normal;
-  font-weight: 400;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -51,10 +44,17 @@ header h1 {
 }
 
 .alerts-badge {
-  color: #ff3434;
-  font-size: 1.4rem;
-  font-family: "0xProto Nerd Font Mono", "Noto Sans", sans-serif;
-  font-variant-ligatures: none;
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background: #ff3434;
+  color: #ffffff;
+  font-family: "Noto Sans", "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 header p {
@@ -83,6 +83,46 @@ header p {
 @media (max-width: 900px) {
   .top-row {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    gap: 16px;
+    padding: 24px 12px;
+  }
+
+  header h1 {
+    font-size: 1.85rem;
+  }
+
+  .title-row {
+    gap: 9px;
+  }
+
+  .alerts-badge {
+    width: 1.35rem;
+    height: 1.35rem;
+    font-size: 0.9rem;
+  }
+
+  header p {
+    margin-top: 6px;
+    font-size: 0.9rem;
+  }
+
+  .top-left {
+    gap: 16px;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .card h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
   }
 }
 

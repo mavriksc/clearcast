@@ -49,13 +49,24 @@ data class AlertsCard(
 
 data class WeatherAlert(
     val title: String,
+    val headline: String = "",
     val severity: AlertSeverity,
     val urgency: AlertUrgency,
     val areas: List<String>,
     val effectiveAt: Instant?,
     val expiresAt: Instant?,
     val description: String,
-)
+    val instruction: String = "",
+) {
+    val displayDescription: String
+        get() = listOf(headline.takeUnless { it.equals(title, ignoreCase = true) }, description)
+            .filterNot { it.isNullOrBlank() }
+            .joinToString(" ")
+            .toAlertDisplayText(maxLength = 650)
+
+    val displayInstruction: String
+        get() = instruction.toAlertDisplayText(maxLength = 320)
+}
 
 data class RadarCard(
     val generatedAt: Instant,
@@ -121,4 +132,19 @@ enum class MoonPhase {
     WANING_GIBBOUS,
     LAST_QUARTER,
     WANING_CRESCENT,
+}
+
+private fun String.toAlertDisplayText(maxLength: Int): String {
+    val normalized = trim()
+        .replace(Regex("""\s+"""), " ")
+        .replace("...", ". ")
+        .replace(Regex("""\s+"""), " ")
+        .trim()
+    if (normalized.length <= maxLength) {
+        return normalized
+    }
+    val cutAt = normalized.lastIndexOf(' ', startIndex = maxLength)
+        .takeIf { it >= maxLength / 2 }
+        ?: maxLength
+    return normalized.take(cutAt).trimEnd('.', ',', ';', ':') + "..."
 }

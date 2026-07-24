@@ -1,7 +1,18 @@
 <section class="card" th:fragment="alertsCard(alerts)">
   <h2>Alerts</h2>
-  <ul class="alerts-list" th:if="${alertAreas != null and !alertAreas.isEmpty()}">
-    <li th:each="area : ${alertAreas}" th:text="${area}">Area</li>
+  <ul class="alerts-list" th:if="${alerts != null and !alerts.alerts.isEmpty()}">
+    <li class="alert-item" th:each="alert : ${alerts.alerts}">
+      <div class="alert-label" th:text="${alert.title}">Alert label</div>
+      <p class="alert-detail" th:if="${alert.displayDescription != ''}" th:text="${alert.displayDescription}">
+        Alert details
+      </p>
+      <p class="alert-instruction" th:if="${alert.displayInstruction != ''}" th:text="${alert.displayInstruction}">
+        Alert instruction
+      </p>
+      <ul class="alert-areas" th:if="${!alert.areas.isEmpty()}">
+        <li th:each="area : ${alert.areas}" th:text="${area}">Area</li>
+      </ul>
+    </li>
   </ul>
-  <div th:if="${alertAreas == null or alertAreas.isEmpty()}">No active alerts.</div>
+  <div th:if="${alerts == null or alerts.alerts.isEmpty()}">No active alerts.</div>
 </section>

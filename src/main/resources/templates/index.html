@@ -19,7 +19,7 @@
           <header>
             <div class="title-row">
               <h1>Clearcast</h1>
-              <span class="alerts-badge" th:if="${alertsCount > 0}">&#xF0D59;</span>
+              <span class="alerts-badge" th:if="${alertsCount > 0}" aria-label="Active weather alerts" title="Active weather alerts">!</span>
             </div>
             <p th:text="'Last updated: ' + ${currentUpdatedAt}">Last updated:</p>
           </header>

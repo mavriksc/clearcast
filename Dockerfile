@@ -7,7 +7,7 @@ COPY gradlew gradlew
 COPY gradlew.bat gradlew.bat
 COPY build.gradle.kts settings.gradle.kts gradle.properties ./
 
-RUN ./gradlew --no-daemon dependencies
+RUN chmod +x ./gradlew && ./gradlew --no-daemon dependencies
 
 COPY src src
 

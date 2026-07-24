@@ -58,3 +58,29 @@
   margin-left: 6px;
   font-size: 1.05rem;
 }
+
+@media (max-width: 600px) {
+  .daily-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .daily-card {
+    padding: 10px 6px;
+    border-radius: 10px;
+  }
+
+  .daily-label,
+  .daily-precip {
+    font-size: 0.82rem;
+  }
+
+  .daily-card img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .daily-temps {
+    gap: 5px;
+  }
+}

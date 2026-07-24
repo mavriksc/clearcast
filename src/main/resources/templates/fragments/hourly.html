@@ -1,7 +1,8 @@
 <section class="card" th:fragment="hourlyCard(hourly)">
   <h2>Hourly Forecast</h2>
-  <div class="hourly-icons" th:if="${hourly != null}">
-    <div class="hourly-icon" th:each="point : ${hourly.hours}">
+  <div class="hourly-icons" th:if="${hourly != null}" th:attr="data-step=${hourlyIconStep}">
+    <div class="hourly-icon" th:each="point, stat : ${hourlyIconPoints}"
+      th:attr="data-hour-index=${stat.index * hourlyIconStep}">
       <img th:src="${point.icon}" alt="Hourly icon" />
     </div>
   </div>

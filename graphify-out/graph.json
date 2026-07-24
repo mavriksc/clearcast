@@ -1,0 +1,3606 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "build-image.ps1",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\build-image.ps1",
+      "source_location": "L1",
+      "id": "build_image",
+      "community": 14
+    },
+    {
+      "label": "build.gradle.kts",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\build.gradle.kts",
+      "source_location": "L1",
+      "id": "build_gradle",
+      "community": 15
+    },
+    {
+      "label": "settings.gradle.kts",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\settings.gradle.kts",
+      "source_location": "L1",
+      "id": "settings_gradle",
+      "community": 16
+    },
+    {
+      "label": "AlertFilters.kt",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt",
+      "source_location": "L1",
+      "id": "alertfilters",
+      "community": 10
+    },
+    {
+      "label": "AlertFilters",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt",
+      "source_location": "L3",
+      "id": "alertfilters_alertfilters",
+      "community": 10
+    },
+    {
+      "label": ".filterAreas()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt",
+      "source_location": "L7",
+      "id": "alertfilters_alertfilters_filterareas",
+      "community": 10
+    },
+    {
+      "label": ".matches()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt",
+      "source_location": "L11",
+      "id": "alertfilters_alertfilters_matches",
+      "community": 10
+    },
+    {
+      "label": "loadAlertFilters()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt",
+      "source_location": "L19",
+      "id": "alertfilters_loadalertfilters",
+      "community": 10
+    },
+    {
+      "label": "parseFilterList()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt",
+      "source_location": "L35",
+      "id": "alertfilters_parsefilterlist",
+      "community": 10
+    },
+    {
+      "label": "Controllers.kt",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L1",
+      "id": "controllers",
+      "community": 6
+    },
+    {
+      "label": "configureControllers()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L20",
+      "id": "controllers_configurecontrollers",
+      "community": 6
+    },
+    {
+      "label": "conditionEmoji()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L86",
+      "id": "controllers_conditionemoji",
+      "community": 6
+    },
+    {
+      "label": "moonPhaseEmoji()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L116",
+      "id": "controllers_moonphaseemoji",
+      "community": 6
+    },
+    {
+      "label": "buildHourlyTimesList()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L129",
+      "id": "controllers_buildhourlytimeslist",
+      "community": 6
+    },
+    {
+      "label": "buildHourlyTempsList()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L137",
+      "id": "controllers_buildhourlytempslist",
+      "community": 6
+    },
+    {
+      "label": "buildHourlyPrecipList()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L142",
+      "id": "controllers_buildhourlypreciplist",
+      "community": 6
+    },
+    {
+      "label": "buildDailyLabels()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L147",
+      "id": "controllers_builddailylabels",
+      "community": 6
+    },
+    {
+      "label": "buildRadarFrameUrls()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L159",
+      "id": "controllers_buildradarframeurls",
+      "community": 6
+    },
+    {
+      "label": "buildAlertAreas()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L164",
+      "id": "controllers_buildalertareas",
+      "community": 6
+    },
+    {
+      "label": "buildEstimatedTempText()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L169",
+      "id": "controllers_buildestimatedtemptext",
+      "community": 6
+    },
+    {
+      "label": "interpolateTemp()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L181",
+      "id": "controllers_interpolatetemp",
+      "community": 6
+    },
+    {
+      "label": "buildHourlyYMin()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L199",
+      "id": "controllers_buildhourlyymin",
+      "community": 6
+    },
+    {
+      "label": "buildHourlyYMax()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L205",
+      "id": "controllers_buildhourlyymax",
+      "community": 6
+    },
+    {
+      "label": "Env.kt",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L1",
+      "id": "env",
+      "community": 7
+    },
+    {
+      "label": "loadEnv()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L10",
+      "id": "env_loadenv",
+      "community": 7
+    },
+    {
+      "label": "clearCacheOnStartupIfRequested()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L37",
+      "id": "env_clearcacheonstartupifrequested",
+      "community": 7
+    },
+    {
+      "label": "findEnvFileOrRoot()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L51",
+      "id": "env_findenvfileorroot",
+      "community": 7
+    },
+    {
+      "label": "ensureLatLonFromZip()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L70",
+      "id": "env_ensurelatlonfromzip",
+      "community": 7
+    },
+    {
+      "label": "resolveLatLonFromZip()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L87",
+      "id": "env_resolvelatlonfromzip",
+      "community": 7
+    },
+    {
+      "label": "ensureGazetteerZip()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L95",
+      "id": "env_ensuregazetteerzip",
+      "community": 7
+    },
+    {
+      "label": "findGazetteerColumns()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L116",
+      "id": "env_findgazetteercolumns",
+      "community": 7
+    },
+    {
+      "label": "findZipInGazetteer()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L138",
+      "id": "env_findzipingazetteer",
+      "community": 7
+    },
+    {
+      "label": "updateEnvLatLon()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L171",
+      "id": "env_updateenvlatlon",
+      "community": 7
+    },
+    {
+      "label": "deleteDirectoryIfExists()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L191",
+      "id": "env_deletedirectoryifexists",
+      "community": 7
+    },
+    {
+      "label": "Main.kt",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Main.kt",
+      "source_location": "L1",
+      "id": "main",
+      "community": 11
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Main.kt",
+      "source_location": "L17",
+      "id": "main_main",
+      "community": 11
+    },
+    {
+      "label": "module()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Main.kt",
+      "source_location": "L21",
+      "id": "main_module",
+      "community": 11
+    },
+    {
+      "label": "loadRefreshConfig()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Main.kt",
+      "source_location": "L48",
+      "id": "main_loadrefreshconfig",
+      "community": 11
+    },
+    {
+      "label": "buildRadarClient()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Main.kt",
+      "source_location": "L64",
+      "id": "main_buildradarclient",
+      "community": 11
+    },
+    {
+      "label": "Static.kt",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Static.kt",
+      "source_location": "L1",
+      "id": "static",
+      "community": 13
+    },
+    {
+      "label": "configureStatic()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Static.kt",
+      "source_location": "L9",
+      "id": "static_configurestatic",
+      "community": 13
+    },
+    {
+      "label": "Types.kt",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L1",
+      "id": "types",
+      "community": 5
+    },
+    {
+      "label": "CurrentConditionsCard",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L5",
+      "id": "types_currentconditionscard",
+      "community": 5
+    },
+    {
+      "label": "HourlyForecastCard",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L18",
+      "id": "types_hourlyforecastcard",
+      "community": 5
+    },
+    {
+      "label": "HourlyForecastPoint",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L23",
+      "id": "types_hourlyforecastpoint",
+      "community": 5
+    },
+    {
+      "label": "DailyForecastCard",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L31",
+      "id": "types_dailyforecastcard",
+      "community": 5
+    },
+    {
+      "label": "DailyForecastPoint",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L36",
+      "id": "types_dailyforecastpoint",
+      "community": 5
+    },
+    {
+      "label": "AlertsCard",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L45",
+      "id": "types_alertscard",
+      "community": 5
+    },
+    {
+      "label": "WeatherAlert",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L50",
+      "id": "types_weatheralert",
+      "community": 5
+    },
+    {
+      "label": "RadarCard",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L60",
+      "id": "types_radarcard",
+      "community": 5
+    },
+    {
+      "label": "RadarFrame",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L66",
+      "id": "types_radarframe",
+      "community": 5
+    },
+    {
+      "label": "RadarMode",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L71",
+      "id": "types_radarmode",
+      "community": 5
+    },
+    {
+      "label": "PrecipType",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L76",
+      "id": "types_preciptype",
+      "community": 5
+    },
+    {
+      "label": "AlertSeverity",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L85",
+      "id": "types_alertseverity",
+      "community": 5
+    },
+    {
+      "label": "AlertUrgency",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L93",
+      "id": "types_alerturgency",
+      "community": 5
+    },
+    {
+      "label": "ConditionTheme",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L101",
+      "id": "types_conditiontheme",
+      "community": 5
+    },
+    {
+      "label": "MoonPhase",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L115",
+      "id": "types_moonphase",
+      "community": 5
+    },
+    {
+      "label": "MoonPhaseService.kt",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\MoonPhaseService.kt",
+      "source_location": "L1",
+      "id": "moonphaseservice",
+      "community": 12
+    },
+    {
+      "label": "MoonPhaseService",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\MoonPhaseService.kt",
+      "source_location": "L8",
+      "id": "moonphaseservice_moonphaseservice",
+      "community": 12
+    },
+    {
+      "label": ".phaseFor()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\MoonPhaseService.kt",
+      "source_location": "L9",
+      "id": "moonphaseservice_moonphaseservice_phasefor",
+      "community": 12
+    },
+    {
+      "label": "RadarRidgeService.kt",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L1",
+      "id": "radarridgeservice",
+      "community": 8
+    },
+    {
+      "label": "RadarRidgeService",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L15",
+      "id": "radarridgeservice_radarridgeservice",
+      "community": 8
+    },
+    {
+      "label": ".frameUrls()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L21",
+      "id": "radarridgeservice_radarridgeservice_frameurls",
+      "community": 8
+    },
+    {
+      "label": ".loopUrl()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L26",
+      "id": "radarridgeservice_radarridgeservice_loopurl",
+      "community": 8
+    },
+    {
+      "label": ".downloadFrames()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L31",
+      "id": "radarridgeservice_radarridgeservice_downloadframes",
+      "community": 8
+    },
+    {
+      "label": ".downloadLoop()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L42",
+      "id": "radarridgeservice_radarridgeservice_downloadloop",
+      "community": 8
+    },
+    {
+      "label": ".download()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L49",
+      "id": "radarridgeservice_radarridgeservice_download",
+      "community": 8
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L73",
+      "id": "radarridgeservice_main",
+      "community": 8
+    },
+    {
+      "label": "resolveStation()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L84",
+      "id": "radarridgeservice_resolvestation",
+      "community": 8
+    },
+    {
+      "label": "buildClient()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L105",
+      "id": "radarridgeservice_buildclient",
+      "community": 8
+    },
+    {
+      "label": "RadarWmsService.kt",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L1",
+      "id": "radarwmsservice",
+      "community": 9
+    },
+    {
+      "label": "RadarWmsConfig",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L24",
+      "id": "radarwmsservice_radarwmsconfig",
+      "community": 9
+    },
+    {
+      "label": "RadarWmsService",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L44",
+      "id": "radarwmsservice_radarwmsservice",
+      "community": 2
+    },
+    {
+      "label": "fromEnv()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L53",
+      "id": "radarwmsservice_fromenv",
+      "community": 9
+    },
+    {
+      "label": ".frameUrls()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L98",
+      "id": "radarwmsservice_radarwmsservice_frameurls",
+      "community": 2
+    },
+    {
+      "label": ".frameIntervalSeconds()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L106",
+      "id": "radarwmsservice_radarwmsservice_frameintervalseconds",
+      "community": 2
+    },
+    {
+      "label": ".updateAndGetGif()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L108",
+      "id": "radarwmsservice_radarwmsservice_updateandgetgif",
+      "community": 2
+    },
+    {
+      "label": ".buildBbox()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L166",
+      "id": "radarwmsservice_radarwmsservice_buildbbox",
+      "community": 2
+    },
+    {
+      "label": ".buildUrl()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L176",
+      "id": "radarwmsservice_radarwmsservice_buildurl",
+      "community": 2
+    },
+    {
+      "label": ".encode()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L202",
+      "id": "radarwmsservice_radarwmsservice_encode",
+      "community": 2
+    },
+    {
+      "label": ".clamp()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L205",
+      "id": "radarwmsservice_radarwmsservice_clamp",
+      "community": 2
+    },
+    {
+      "label": ".selectFrameTimes()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L208",
+      "id": "radarwmsservice_radarwmsservice_selectframetimes",
+      "community": 2
+    },
+    {
+      "label": ".fetchAvailableTimes()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L227",
+      "id": "radarwmsservice_radarwmsservice_fetchavailabletimes",
+      "community": 2
+    },
+    {
+      "label": ".parseTimesFromCapabilities()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L256",
+      "id": "radarwmsservice_radarwmsservice_parsetimesfromcapabilities",
+      "community": 2
+    },
+    {
+      "label": ".parseTimeList()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L289",
+      "id": "radarwmsservice_radarwmsservice_parsetimelist",
+      "community": 2
+    },
+    {
+      "label": ".parseTimesFromRegex()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L321",
+      "id": "radarwmsservice_radarwmsservice_parsetimesfromregex",
+      "community": 2
+    },
+    {
+      "label": ".childText()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L341",
+      "id": "radarwmsservice_radarwmsservice_childtext",
+      "community": 2
+    },
+    {
+      "label": ".childTimeExtent()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L356",
+      "id": "radarwmsservice_radarwmsservice_childtimeextent",
+      "community": 2
+    },
+    {
+      "label": ".frameFileName()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L374",
+      "id": "radarwmsservice_radarwmsservice_framefilename",
+      "community": 2
+    },
+    {
+      "label": ".download()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L379",
+      "id": "radarwmsservice_radarwmsservice_download",
+      "community": 2
+    },
+    {
+      "label": ".fetchBaseMap()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L392",
+      "id": "radarwmsservice_radarwmsservice_fetchbasemap",
+      "community": 2
+    },
+    {
+      "label": ".buildBaseMapUrl()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L407",
+      "id": "radarwmsservice_radarwmsservice_buildbasemapurl",
+      "community": 2
+    },
+    {
+      "label": ".composeWithBase()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L428",
+      "id": "radarwmsservice_radarwmsservice_composewithbase",
+      "community": 2
+    },
+    {
+      "label": ".drawTimestamp()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L443",
+      "id": "radarwmsservice_radarwmsservice_drawtimestamp",
+      "community": 2
+    },
+    {
+      "label": ".writeGif()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L464",
+      "id": "radarwmsservice_radarwmsservice_writegif",
+      "community": 2
+    },
+    {
+      "label": "GifSequenceWriter",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L495",
+      "id": "radarwmsservice_gifsequencewriter",
+      "community": 9
+    },
+    {
+      "label": ".writeToSequence()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L529",
+      "id": "radarwmsservice_gifsequencewriter_writetosequence",
+      "community": 9
+    },
+    {
+      "label": ".close()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L533",
+      "id": "radarwmsservice_gifsequencewriter_close",
+      "community": 9
+    },
+    {
+      "label": ".getNode()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L537",
+      "id": "radarwmsservice_gifsequencewriter_getnode",
+      "community": 9
+    },
+    {
+      "label": "WeatherGovParsers.kt",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L1",
+      "id": "weathergovparsers",
+      "community": 1
+    },
+    {
+      "label": "PointsInfo",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L29",
+      "id": "weathergovparsers_pointsinfo",
+      "community": 1
+    },
+    {
+      "label": "parsePoints()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L37",
+      "id": "weathergovparsers_parsepoints",
+      "community": 1
+    },
+    {
+      "label": "parseHourlyForecast()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L55",
+      "id": "weathergovparsers_parsehourlyforecast",
+      "community": 1
+    },
+    {
+      "label": "parseDailyForecast()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L87",
+      "id": "weathergovparsers_parsedailyforecast",
+      "community": 1
+    },
+    {
+      "label": "parseCurrentFromHourlyJson()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L135",
+      "id": "weathergovparsers_parsecurrentfromhourlyjson",
+      "community": 1
+    },
+    {
+      "label": "parseCurrentFromObservationJson()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L164",
+      "id": "weathergovparsers_parsecurrentfromobservationjson",
+      "community": 1
+    },
+    {
+      "label": "parseAlerts()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L212",
+      "id": "weathergovparsers_parsealerts",
+      "community": 1
+    },
+    {
+      "label": "DailyPeriod",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L251",
+      "id": "weathergovparsers_dailyperiod",
+      "community": 1
+    },
+    {
+      "label": "parsePrecipTypes()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L259",
+      "id": "weathergovparsers_parsepreciptypes",
+      "community": 1
+    },
+    {
+      "label": "inferConditionTheme()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L270",
+      "id": "weathergovparsers_inferconditiontheme",
+      "community": 1
+    },
+    {
+      "label": "toFahrenheit()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L287",
+      "id": "weathergovparsers_tofahrenheit",
+      "community": 1
+    },
+    {
+      "label": "toMph()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L298",
+      "id": "weathergovparsers_tomph",
+      "community": 1
+    },
+    {
+      "label": "parseWindMph()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L310",
+      "id": "weathergovparsers_parsewindmph",
+      "community": 1
+    },
+    {
+      "label": "toInstant()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L315",
+      "id": "weathergovparsers_toinstant",
+      "community": 1
+    },
+    {
+      "label": "toSeverity()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L317",
+      "id": "weathergovparsers_toseverity",
+      "community": 1
+    },
+    {
+      "label": "toUrgency()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L325",
+      "id": "weathergovparsers_tourgency",
+      "community": 1
+    },
+    {
+      "label": "obj()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L333",
+      "id": "weathergovparsers_obj",
+      "community": 1
+    },
+    {
+      "label": "objOrNull()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L335",
+      "id": "weathergovparsers_objornull",
+      "community": 1
+    },
+    {
+      "label": "str()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L337",
+      "id": "weathergovparsers_str",
+      "community": 1
+    },
+    {
+      "label": "jsonPrimitive()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L339",
+      "id": "weathergovparsers_jsonprimitive",
+      "community": 1
+    },
+    {
+      "label": "num()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L342",
+      "id": "weathergovparsers_num",
+      "community": 1
+    },
+    {
+      "label": "array()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L344",
+      "id": "weathergovparsers_array",
+      "community": 1
+    },
+    {
+      "label": "WeatherGovService.kt",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L1",
+      "id": "weathergovservice",
+      "community": 4
+    },
+    {
+      "label": "WeatherGovService",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L19",
+      "id": "weathergovservice_weathergovservice",
+      "community": 4
+    },
+    {
+      "label": ".getPoints()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L25",
+      "id": "weathergovservice_weathergovservice_getpoints",
+      "community": 4
+    },
+    {
+      "label": ".getForecast()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L30",
+      "id": "weathergovservice_weathergovservice_getforecast",
+      "community": 4
+    },
+    {
+      "label": ".getForecastHourly()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L32",
+      "id": "weathergovservice_weathergovservice_getforecasthourly",
+      "community": 4
+    },
+    {
+      "label": ".getAlertsByState()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L34",
+      "id": "weathergovservice_weathergovservice_getalertsbystate",
+      "community": 4
+    },
+    {
+      "label": ".getObservationStations()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L39",
+      "id": "weathergovservice_weathergovservice_getobservationstations",
+      "community": 4
+    },
+    {
+      "label": ".getLatestObservation()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L41",
+      "id": "weathergovservice_weathergovservice_getlatestobservation",
+      "community": 4
+    },
+    {
+      "label": ".fetchJson()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L50",
+      "id": "weathergovservice_weathergovservice_fetchjson",
+      "community": 4
+    },
+    {
+      "label": ".executeWithRetry()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L55",
+      "id": "weathergovservice_weathergovservice_executewithretry",
+      "community": 4
+    },
+    {
+      "label": "fromEnv()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L86",
+      "id": "weathergovservice_fromenv",
+      "community": 4
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L107",
+      "id": "weathergovservice_main",
+      "community": 4
+    },
+    {
+      "label": "writeJson()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L164",
+      "id": "weathergovservice_writejson",
+      "community": 4
+    },
+    {
+      "label": "parseLatLon()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L168",
+      "id": "weathergovservice_parselatlon",
+      "community": 4
+    },
+    {
+      "label": "resolveLatLonFromZip()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L174",
+      "id": "weathergovservice_resolvelatlonfromzip",
+      "community": 4
+    },
+    {
+      "label": "ensureGazetteerZip()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L182",
+      "id": "weathergovservice_ensuregazetteerzip",
+      "community": 4
+    },
+    {
+      "label": "findGazetteerColumns()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L203",
+      "id": "weathergovservice_findgazetteercolumns",
+      "community": 4
+    },
+    {
+      "label": "findZipInGazetteer()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L225",
+      "id": "weathergovservice_findzipingazetteer",
+      "community": 4
+    },
+    {
+      "label": "updateEnvLatLon()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L258",
+      "id": "weathergovservice_updateenvlatlon",
+      "community": 4
+    },
+    {
+      "label": "WeatherService.kt",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L1",
+      "id": "weatherservice",
+      "community": 0
+    },
+    {
+      "label": "RefreshConfig",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L41",
+      "id": "weatherservice_refreshconfig",
+      "community": 0
+    },
+    {
+      "label": "NextFetchTimes",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L49",
+      "id": "weatherservice_nextfetchtimes",
+      "community": 0
+    },
+    {
+      "label": "empty()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L57",
+      "id": "weatherservice_empty",
+      "community": 0
+    },
+    {
+      "label": "WeatherService",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L61",
+      "id": "weatherservice_weatherservice",
+      "community": 3
+    },
+    {
+      "label": ".start()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L84",
+      "id": "weatherservice_weatherservice_start",
+      "community": 3
+    },
+    {
+      "label": ".refreshMissingOnStart()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L95",
+      "id": "weatherservice_weatherservice_refreshmissingonstart",
+      "community": 3
+    },
+    {
+      "label": ".scheduleFetches()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L118",
+      "id": "weatherservice_weatherservice_schedulefetches",
+      "community": 3
+    },
+    {
+      "label": ".loadCache()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L177",
+      "id": "weatherservice_weatherservice_loadcache",
+      "community": 3
+    },
+    {
+      "label": ".persistCache()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L207",
+      "id": "weatherservice_weatherservice_persistcache",
+      "community": 3
+    },
+    {
+      "label": ".loadSampleResponses()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L222",
+      "id": "weatherservice_weatherservice_loadsampleresponses",
+      "community": 3
+    },
+    {
+      "label": ".readJson()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L252",
+      "id": "weatherservice_weatherservice_readjson",
+      "community": 3
+    },
+    {
+      "label": ".resolveRadarStation()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L260",
+      "id": "weatherservice_weatherservice_resolveradarstation",
+      "community": 3
+    },
+    {
+      "label": ".resolveRadarProvider()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L283",
+      "id": "weatherservice_weatherservice_resolveradarprovider",
+      "community": 3
+    },
+    {
+      "label": ".allowWmsFallback()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L289",
+      "id": "weatherservice_weatherservice_allowwmsfallback",
+      "community": 3
+    },
+    {
+      "label": ".resolveLatLon()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L295",
+      "id": "weatherservice_weatherservice_resolvelatlon",
+      "community": 3
+    },
+    {
+      "label": ".refreshCurrentFromObservation()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L307",
+      "id": "weatherservice_weatherservice_refreshcurrentfromobservation",
+      "community": 3
+    },
+    {
+      "label": ".extractStationIdentifier()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L321",
+      "id": "weatherservice_weatherservice_extractstationidentifier",
+      "community": 3
+    },
+    {
+      "label": ".refreshRadar()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L336",
+      "id": "weatherservice_weatherservice_refreshradar",
+      "community": 3
+    },
+    {
+      "label": ".refreshHourlyForecast()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L388",
+      "id": "weatherservice_weatherservice_refreshhourlyforecast",
+      "community": 3
+    },
+    {
+      "label": ".refreshDailyForecast()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L395",
+      "id": "weatherservice_weatherservice_refreshdailyforecast",
+      "community": 3
+    },
+    {
+      "label": ".refreshAlerts()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L402",
+      "id": "weatherservice_weatherservice_refreshalerts",
+      "community": 3
+    },
+    {
+      "label": ".fetchPointsData()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L410",
+      "id": "weatherservice_weatherservice_fetchpointsdata",
+      "community": 3
+    },
+    {
+      "label": ".sanitizeAlerts()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L433",
+      "id": "weatherservice_weatherservice_sanitizealerts",
+      "community": 3
+    },
+    {
+      "label": "PointsData",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L449",
+      "id": "weatherservice_pointsdata",
+      "community": 0
+    },
+    {
+      "label": "CachedWeather",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L456",
+      "id": "weatherservice_cachedweather",
+      "community": 0
+    },
+    {
+      "label": "CachedNextFetchTimes",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L466",
+      "id": "weatherservice_cachednextfetchtimes",
+      "community": 0
+    },
+    {
+      "label": ".toDomain()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L474",
+      "id": "weatherservice_cachednextfetchtimes_todomain",
+      "community": 0
+    },
+    {
+      "label": "CachedCurrentConditionsCard",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L483",
+      "id": "weatherservice_cachedcurrentconditionscard",
+      "community": 0
+    },
+    {
+      "label": ".toDomain()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L496",
+      "id": "weatherservice_cachedcurrentconditionscard_todomain",
+      "community": 0
+    },
+    {
+      "label": "CachedHourlyForecastCard",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L510",
+      "id": "weatherservice_cachedhourlyforecastcard",
+      "community": 0
+    },
+    {
+      "label": ".toDomain()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L515",
+      "id": "weatherservice_cachedhourlyforecastcard_todomain",
+      "community": 0
+    },
+    {
+      "label": "CachedHourlyForecastPoint",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L521",
+      "id": "weatherservice_cachedhourlyforecastpoint",
+      "community": 0
+    },
+    {
+      "label": ".toDomain()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L529",
+      "id": "weatherservice_cachedhourlyforecastpoint_todomain",
+      "community": 0
+    },
+    {
+      "label": "CachedDailyForecastCard",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L538",
+      "id": "weatherservice_cacheddailyforecastcard",
+      "community": 0
+    },
+    {
+      "label": ".toDomain()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L543",
+      "id": "weatherservice_cacheddailyforecastcard_todomain",
+      "community": 0
+    },
+    {
+      "label": "CachedDailyForecastPoint",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L549",
+      "id": "weatherservice_cacheddailyforecastpoint",
+      "community": 0
+    },
+    {
+      "label": ".toDomain()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L558",
+      "id": "weatherservice_cacheddailyforecastpoint_todomain",
+      "community": 0
+    },
+    {
+      "label": "CachedAlertsCard",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L568",
+      "id": "weatherservice_cachedalertscard",
+      "community": 0
+    },
+    {
+      "label": ".toDomain()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L573",
+      "id": "weatherservice_cachedalertscard_todomain",
+      "community": 0
+    },
+    {
+      "label": "CachedWeatherAlert",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L579",
+      "id": "weatherservice_cachedweatheralert",
+      "community": 0
+    },
+    {
+      "label": ".toDomain()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L589",
+      "id": "weatherservice_cachedweatheralert_todomain",
+      "community": 0
+    },
+    {
+      "label": "CachedRadarCard",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L600",
+      "id": "weatherservice_cachedradarcard",
+      "community": 0
+    },
+    {
+      "label": ".toDomain()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L606",
+      "id": "weatherservice_cachedradarcard_todomain",
+      "community": 0
+    },
+    {
+      "label": "CachedRadarFrame",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L613",
+      "id": "weatherservice_cachedradarframe",
+      "community": 0
+    },
+    {
+      "label": ".toDomain()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L618",
+      "id": "weatherservice_cachedradarframe_todomain",
+      "community": 0
+    },
+    {
+      "label": "toCache()",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L624",
+      "id": "weatherservice_tocache",
+      "community": 0
+    },
+    {
+      "label": "hourly.js",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\resources\\static\\js\\hourly.js",
+      "source_location": "L1",
+      "id": "hourly",
+      "community": 17
+    },
+    {
+      "label": "radar.js",
+      "file_type": "code",
+      "source_file": "D:\\code\\clearcast\\src\\main\\resources\\static\\js\\radar.js",
+      "source_location": "L1",
+      "id": "radar",
+      "community": 18
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "alertfilters",
+      "_tgt": "alertfilters_alertfilters",
+      "source": "alertfilters",
+      "target": "alertfilters_alertfilters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "alertfilters",
+      "_tgt": "alertfilters_loadalertfilters",
+      "source": "alertfilters",
+      "target": "alertfilters_loadalertfilters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_src": "alertfilters",
+      "_tgt": "alertfilters_parsefilterlist",
+      "source": "alertfilters",
+      "target": "alertfilters_parsefilterlist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "alertfilters_alertfilters",
+      "_tgt": "alertfilters_alertfilters_filterareas",
+      "source": "alertfilters_alertfilters",
+      "target": "alertfilters_alertfilters_filterareas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "alertfilters_alertfilters",
+      "_tgt": "alertfilters_alertfilters_matches",
+      "source": "alertfilters_alertfilters",
+      "target": "alertfilters_alertfilters_matches",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_configurecontrollers",
+      "source": "controllers",
+      "target": "controllers_configurecontrollers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_conditionemoji",
+      "source": "controllers",
+      "target": "controllers_conditionemoji",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_moonphaseemoji",
+      "source": "controllers",
+      "target": "controllers_moonphaseemoji",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_buildhourlytimeslist",
+      "source": "controllers",
+      "target": "controllers_buildhourlytimeslist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_buildhourlytempslist",
+      "source": "controllers",
+      "target": "controllers_buildhourlytempslist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L142",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_buildhourlypreciplist",
+      "source": "controllers",
+      "target": "controllers_buildhourlypreciplist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L147",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_builddailylabels",
+      "source": "controllers",
+      "target": "controllers_builddailylabels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L159",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_buildradarframeurls",
+      "source": "controllers",
+      "target": "controllers_buildradarframeurls",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L164",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_buildalertareas",
+      "source": "controllers",
+      "target": "controllers_buildalertareas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L169",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_buildestimatedtemptext",
+      "source": "controllers",
+      "target": "controllers_buildestimatedtemptext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L181",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_interpolatetemp",
+      "source": "controllers",
+      "target": "controllers_interpolatetemp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L199",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_buildhourlyymin",
+      "source": "controllers",
+      "target": "controllers_buildhourlyymin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "source_location": "L205",
+      "weight": 1.0,
+      "_src": "controllers",
+      "_tgt": "controllers_buildhourlyymax",
+      "source": "controllers",
+      "target": "controllers_buildhourlyymax",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "env",
+      "_tgt": "env_loadenv",
+      "source": "env",
+      "target": "env_loadenv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_src": "env",
+      "_tgt": "env_clearcacheonstartupifrequested",
+      "source": "env",
+      "target": "env_clearcacheonstartupifrequested",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_src": "env",
+      "_tgt": "env_findenvfileorroot",
+      "source": "env",
+      "target": "env_findenvfileorroot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_src": "env",
+      "_tgt": "env_ensurelatlonfromzip",
+      "source": "env",
+      "target": "env_ensurelatlonfromzip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_src": "env",
+      "_tgt": "env_resolvelatlonfromzip",
+      "source": "env",
+      "target": "env_resolvelatlonfromzip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_src": "env",
+      "_tgt": "env_ensuregazetteerzip",
+      "source": "env",
+      "target": "env_ensuregazetteerzip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_src": "env",
+      "_tgt": "env_findgazetteercolumns",
+      "source": "env",
+      "target": "env_findgazetteercolumns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_src": "env",
+      "_tgt": "env_findzipingazetteer",
+      "source": "env",
+      "target": "env_findzipingazetteer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L171",
+      "weight": 1.0,
+      "_src": "env",
+      "_tgt": "env_updateenvlatlon",
+      "source": "env",
+      "target": "env_updateenvlatlon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "source_location": "L191",
+      "weight": 1.0,
+      "_src": "env",
+      "_tgt": "env_deletedirectoryifexists",
+      "source": "env",
+      "target": "env_deletedirectoryifexists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Main.kt",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "main",
+      "_tgt": "main_main",
+      "source": "main",
+      "target": "main_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Main.kt",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "main",
+      "_tgt": "main_module",
+      "source": "main",
+      "target": "main_module",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Main.kt",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_src": "main",
+      "_tgt": "main_loadrefreshconfig",
+      "source": "main",
+      "target": "main_loadrefreshconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Main.kt",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_src": "main",
+      "_tgt": "main_buildradarclient",
+      "source": "main",
+      "target": "main_buildradarclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Static.kt",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "static",
+      "_tgt": "static_configurestatic",
+      "source": "static",
+      "target": "static_configurestatic",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_currentconditionscard",
+      "source": "types",
+      "target": "types_currentconditionscard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_hourlyforecastcard",
+      "source": "types",
+      "target": "types_hourlyforecastcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_hourlyforecastpoint",
+      "source": "types",
+      "target": "types_hourlyforecastpoint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_dailyforecastcard",
+      "source": "types",
+      "target": "types_dailyforecastcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_dailyforecastpoint",
+      "source": "types",
+      "target": "types_dailyforecastpoint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_alertscard",
+      "source": "types",
+      "target": "types_alertscard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_weatheralert",
+      "source": "types",
+      "target": "types_weatheralert",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_radarcard",
+      "source": "types",
+      "target": "types_radarcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_radarframe",
+      "source": "types",
+      "target": "types_radarframe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_radarmode",
+      "source": "types",
+      "target": "types_radarmode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_preciptype",
+      "source": "types",
+      "target": "types_preciptype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_alertseverity",
+      "source": "types",
+      "target": "types_alertseverity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_alerturgency",
+      "source": "types",
+      "target": "types_alerturgency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_conditiontheme",
+      "source": "types",
+      "target": "types_conditiontheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "source_location": "L115",
+      "weight": 1.0,
+      "_src": "types",
+      "_tgt": "types_moonphase",
+      "source": "types",
+      "target": "types_moonphase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\MoonPhaseService.kt",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "moonphaseservice",
+      "_tgt": "moonphaseservice_moonphaseservice",
+      "source": "moonphaseservice",
+      "target": "moonphaseservice_moonphaseservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\MoonPhaseService.kt",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "moonphaseservice_moonphaseservice",
+      "_tgt": "moonphaseservice_moonphaseservice_phasefor",
+      "source": "moonphaseservice_moonphaseservice",
+      "target": "moonphaseservice_moonphaseservice_phasefor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "radarridgeservice",
+      "_tgt": "radarridgeservice_radarridgeservice",
+      "source": "radarridgeservice",
+      "target": "radarridgeservice_radarridgeservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_src": "radarridgeservice",
+      "_tgt": "radarridgeservice_main",
+      "source": "radarridgeservice",
+      "target": "radarridgeservice_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_src": "radarridgeservice",
+      "_tgt": "radarridgeservice_resolvestation",
+      "source": "radarridgeservice",
+      "target": "radarridgeservice_resolvestation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_src": "radarridgeservice",
+      "_tgt": "radarridgeservice_buildclient",
+      "source": "radarridgeservice",
+      "target": "radarridgeservice_buildclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "radarridgeservice_radarridgeservice",
+      "_tgt": "radarridgeservice_radarridgeservice_frameurls",
+      "source": "radarridgeservice_radarridgeservice",
+      "target": "radarridgeservice_radarridgeservice_frameurls",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "radarridgeservice_radarridgeservice",
+      "_tgt": "radarridgeservice_radarridgeservice_loopurl",
+      "source": "radarridgeservice_radarridgeservice",
+      "target": "radarridgeservice_radarridgeservice_loopurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_src": "radarridgeservice_radarridgeservice",
+      "_tgt": "radarridgeservice_radarridgeservice_downloadframes",
+      "source": "radarridgeservice_radarridgeservice",
+      "target": "radarridgeservice_radarridgeservice_downloadframes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_src": "radarridgeservice_radarridgeservice",
+      "_tgt": "radarridgeservice_radarridgeservice_downloadloop",
+      "source": "radarridgeservice_radarridgeservice",
+      "target": "radarridgeservice_radarridgeservice_downloadloop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_src": "radarridgeservice_radarridgeservice",
+      "_tgt": "radarridgeservice_radarridgeservice_download",
+      "source": "radarridgeservice_radarridgeservice",
+      "target": "radarridgeservice_radarridgeservice_download",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsconfig",
+      "source": "radarwmsservice",
+      "target": "radarwmsservice_radarwmsconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_src": "radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice",
+      "source": "radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_src": "radarwmsservice",
+      "_tgt": "radarwmsservice_fromenv",
+      "source": "radarwmsservice",
+      "target": "radarwmsservice_fromenv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L495",
+      "weight": 1.0,
+      "_src": "radarwmsservice",
+      "_tgt": "radarwmsservice_gifsequencewriter",
+      "source": "radarwmsservice",
+      "target": "radarwmsservice_gifsequencewriter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_frameurls",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_frameurls",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_frameintervalseconds",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_frameintervalseconds",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L108",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_updateandgetgif",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_updateandgetgif",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L166",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_buildbbox",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_buildbbox",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L176",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_buildurl",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_buildurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L202",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_encode",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_encode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L205",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_clamp",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_clamp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L208",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_selectframetimes",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_selectframetimes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L227",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_fetchavailabletimes",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_fetchavailabletimes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L256",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_parsetimesfromcapabilities",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_parsetimesfromcapabilities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L289",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_parsetimelist",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_parsetimelist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L321",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_parsetimesfromregex",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_parsetimesfromregex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L341",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_childtext",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_childtext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L356",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_childtimeextent",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_childtimeextent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L374",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_framefilename",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_framefilename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L379",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_download",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_download",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L392",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_fetchbasemap",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_fetchbasemap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L407",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_buildbasemapurl",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_buildbasemapurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L428",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_composewithbase",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_composewithbase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L443",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_drawtimestamp",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_drawtimestamp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L464",
+      "weight": 1.0,
+      "_src": "radarwmsservice_radarwmsservice",
+      "_tgt": "radarwmsservice_radarwmsservice_writegif",
+      "source": "radarwmsservice_radarwmsservice",
+      "target": "radarwmsservice_radarwmsservice_writegif",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L529",
+      "weight": 1.0,
+      "_src": "radarwmsservice_gifsequencewriter",
+      "_tgt": "radarwmsservice_gifsequencewriter_writetosequence",
+      "source": "radarwmsservice_gifsequencewriter",
+      "target": "radarwmsservice_gifsequencewriter_writetosequence",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L533",
+      "weight": 1.0,
+      "_src": "radarwmsservice_gifsequencewriter",
+      "_tgt": "radarwmsservice_gifsequencewriter_close",
+      "source": "radarwmsservice_gifsequencewriter",
+      "target": "radarwmsservice_gifsequencewriter_close",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "source_location": "L537",
+      "weight": 1.0,
+      "_src": "radarwmsservice_gifsequencewriter",
+      "_tgt": "radarwmsservice_gifsequencewriter_getnode",
+      "source": "radarwmsservice_gifsequencewriter",
+      "target": "radarwmsservice_gifsequencewriter_getnode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_pointsinfo",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_pointsinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_parsepoints",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_parsepoints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_parsehourlyforecast",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_parsehourlyforecast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_parsedailyforecast",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_parsedailyforecast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L135",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_parsecurrentfromhourlyjson",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_parsecurrentfromhourlyjson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L164",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_parsecurrentfromobservationjson",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_parsecurrentfromobservationjson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L212",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_parsealerts",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_parsealerts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L251",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_dailyperiod",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_dailyperiod",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L259",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_parsepreciptypes",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_parsepreciptypes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L270",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_inferconditiontheme",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_inferconditiontheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L287",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_tofahrenheit",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_tofahrenheit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L298",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_tomph",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_tomph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L310",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_parsewindmph",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_parsewindmph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L315",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_toinstant",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_toinstant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L317",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_toseverity",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_toseverity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L325",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_tourgency",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_tourgency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L333",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_obj",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_obj",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L346",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_objornull",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_objornull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L337",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_str",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L339",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_jsonprimitive",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_jsonprimitive",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L342",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_num",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_num",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "source_location": "L344",
+      "weight": 1.0,
+      "_src": "weathergovparsers",
+      "_tgt": "weathergovparsers_array",
+      "source": "weathergovparsers",
+      "target": "weathergovparsers_array",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "weathergovservice",
+      "_tgt": "weathergovservice_weathergovservice",
+      "source": "weathergovservice",
+      "target": "weathergovservice_weathergovservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_src": "weathergovservice",
+      "_tgt": "weathergovservice_fromenv",
+      "source": "weathergovservice",
+      "target": "weathergovservice_fromenv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_src": "weathergovservice",
+      "_tgt": "weathergovservice_main",
+      "source": "weathergovservice",
+      "target": "weathergovservice_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L164",
+      "weight": 1.0,
+      "_src": "weathergovservice",
+      "_tgt": "weathergovservice_writejson",
+      "source": "weathergovservice",
+      "target": "weathergovservice_writejson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L168",
+      "weight": 1.0,
+      "_src": "weathergovservice",
+      "_tgt": "weathergovservice_parselatlon",
+      "source": "weathergovservice",
+      "target": "weathergovservice_parselatlon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L174",
+      "weight": 1.0,
+      "_src": "weathergovservice",
+      "_tgt": "weathergovservice_resolvelatlonfromzip",
+      "source": "weathergovservice",
+      "target": "weathergovservice_resolvelatlonfromzip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L182",
+      "weight": 1.0,
+      "_src": "weathergovservice",
+      "_tgt": "weathergovservice_ensuregazetteerzip",
+      "source": "weathergovservice",
+      "target": "weathergovservice_ensuregazetteerzip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L203",
+      "weight": 1.0,
+      "_src": "weathergovservice",
+      "_tgt": "weathergovservice_findgazetteercolumns",
+      "source": "weathergovservice",
+      "target": "weathergovservice_findgazetteercolumns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L225",
+      "weight": 1.0,
+      "_src": "weathergovservice",
+      "_tgt": "weathergovservice_findzipingazetteer",
+      "source": "weathergovservice",
+      "target": "weathergovservice_findzipingazetteer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L258",
+      "weight": 1.0,
+      "_src": "weathergovservice",
+      "_tgt": "weathergovservice_updateenvlatlon",
+      "source": "weathergovservice",
+      "target": "weathergovservice_updateenvlatlon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "weathergovservice_weathergovservice",
+      "_tgt": "weathergovservice_weathergovservice_getpoints",
+      "source": "weathergovservice_weathergovservice",
+      "target": "weathergovservice_weathergovservice_getpoints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "weathergovservice_weathergovservice",
+      "_tgt": "weathergovservice_weathergovservice_getforecast",
+      "source": "weathergovservice_weathergovservice",
+      "target": "weathergovservice_weathergovservice_getforecast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "weathergovservice_weathergovservice",
+      "_tgt": "weathergovservice_weathergovservice_getforecasthourly",
+      "source": "weathergovservice_weathergovservice",
+      "target": "weathergovservice_weathergovservice_getforecasthourly",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "weathergovservice_weathergovservice",
+      "_tgt": "weathergovservice_weathergovservice_getalertsbystate",
+      "source": "weathergovservice_weathergovservice",
+      "target": "weathergovservice_weathergovservice_getalertsbystate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "weathergovservice_weathergovservice",
+      "_tgt": "weathergovservice_weathergovservice_getobservationstations",
+      "source": "weathergovservice_weathergovservice",
+      "target": "weathergovservice_weathergovservice_getobservationstations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_src": "weathergovservice_weathergovservice",
+      "_tgt": "weathergovservice_weathergovservice_getlatestobservation",
+      "source": "weathergovservice_weathergovservice",
+      "target": "weathergovservice_weathergovservice_getlatestobservation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_src": "weathergovservice_weathergovservice",
+      "_tgt": "weathergovservice_weathergovservice_fetchjson",
+      "source": "weathergovservice_weathergovservice",
+      "target": "weathergovservice_weathergovservice_fetchjson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "weathergovservice_weathergovservice",
+      "_tgt": "weathergovservice_weathergovservice_executewithretry",
+      "source": "weathergovservice_weathergovservice",
+      "target": "weathergovservice_weathergovservice_executewithretry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_refreshconfig",
+      "source": "weatherservice",
+      "target": "weatherservice_refreshconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_nextfetchtimes",
+      "source": "weatherservice",
+      "target": "weatherservice_nextfetchtimes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_empty",
+      "source": "weatherservice",
+      "target": "weatherservice_empty",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_weatherservice",
+      "source": "weatherservice",
+      "target": "weatherservice_weatherservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L449",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_pointsdata",
+      "source": "weatherservice",
+      "target": "weatherservice_pointsdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L456",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_cachedweather",
+      "source": "weatherservice",
+      "target": "weatherservice_cachedweather",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L466",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_cachednextfetchtimes",
+      "source": "weatherservice",
+      "target": "weatherservice_cachednextfetchtimes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L483",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_cachedcurrentconditionscard",
+      "source": "weatherservice",
+      "target": "weatherservice_cachedcurrentconditionscard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L510",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_cachedhourlyforecastcard",
+      "source": "weatherservice",
+      "target": "weatherservice_cachedhourlyforecastcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L521",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_cachedhourlyforecastpoint",
+      "source": "weatherservice",
+      "target": "weatherservice_cachedhourlyforecastpoint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L538",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_cacheddailyforecastcard",
+      "source": "weatherservice",
+      "target": "weatherservice_cacheddailyforecastcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L549",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_cacheddailyforecastpoint",
+      "source": "weatherservice",
+      "target": "weatherservice_cacheddailyforecastpoint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L568",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_cachedalertscard",
+      "source": "weatherservice",
+      "target": "weatherservice_cachedalertscard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L579",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_cachedweatheralert",
+      "source": "weatherservice",
+      "target": "weatherservice_cachedweatheralert",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L600",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_cachedradarcard",
+      "source": "weatherservice",
+      "target": "weatherservice_cachedradarcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L613",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_cachedradarframe",
+      "source": "weatherservice",
+      "target": "weatherservice_cachedradarframe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L690",
+      "weight": 1.0,
+      "_src": "weatherservice",
+      "_tgt": "weatherservice_tocache",
+      "source": "weatherservice",
+      "target": "weatherservice_tocache",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_start",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_refreshmissingonstart",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_refreshmissingonstart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L118",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_schedulefetches",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_schedulefetches",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L177",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_loadcache",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_loadcache",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L207",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_persistcache",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_persistcache",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L222",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_loadsampleresponses",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_loadsampleresponses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L252",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_readjson",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_readjson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L260",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_resolveradarstation",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_resolveradarstation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L283",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_resolveradarprovider",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_resolveradarprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L289",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_allowwmsfallback",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_allowwmsfallback",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L295",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_resolvelatlon",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_resolvelatlon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L307",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_refreshcurrentfromobservation",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_refreshcurrentfromobservation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L321",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_extractstationidentifier",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_extractstationidentifier",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L336",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_refreshradar",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_refreshradar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L388",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_refreshhourlyforecast",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_refreshhourlyforecast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L395",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_refreshdailyforecast",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_refreshdailyforecast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L402",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_refreshalerts",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_refreshalerts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L410",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_fetchpointsdata",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_fetchpointsdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L433",
+      "weight": 1.0,
+      "_src": "weatherservice_weatherservice",
+      "_tgt": "weatherservice_weatherservice_sanitizealerts",
+      "source": "weatherservice_weatherservice",
+      "target": "weatherservice_weatherservice_sanitizealerts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L474",
+      "weight": 1.0,
+      "_src": "weatherservice_cachednextfetchtimes",
+      "_tgt": "weatherservice_cachednextfetchtimes_todomain",
+      "source": "weatherservice_cachednextfetchtimes",
+      "target": "weatherservice_cachednextfetchtimes_todomain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L496",
+      "weight": 1.0,
+      "_src": "weatherservice_cachedcurrentconditionscard",
+      "_tgt": "weatherservice_cachedcurrentconditionscard_todomain",
+      "source": "weatherservice_cachedcurrentconditionscard",
+      "target": "weatherservice_cachedcurrentconditionscard_todomain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L515",
+      "weight": 1.0,
+      "_src": "weatherservice_cachedhourlyforecastcard",
+      "_tgt": "weatherservice_cachedhourlyforecastcard_todomain",
+      "source": "weatherservice_cachedhourlyforecastcard",
+      "target": "weatherservice_cachedhourlyforecastcard_todomain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L529",
+      "weight": 1.0,
+      "_src": "weatherservice_cachedhourlyforecastpoint",
+      "_tgt": "weatherservice_cachedhourlyforecastpoint_todomain",
+      "source": "weatherservice_cachedhourlyforecastpoint",
+      "target": "weatherservice_cachedhourlyforecastpoint_todomain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L543",
+      "weight": 1.0,
+      "_src": "weatherservice_cacheddailyforecastcard",
+      "_tgt": "weatherservice_cacheddailyforecastcard_todomain",
+      "source": "weatherservice_cacheddailyforecastcard",
+      "target": "weatherservice_cacheddailyforecastcard_todomain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L558",
+      "weight": 1.0,
+      "_src": "weatherservice_cacheddailyforecastpoint",
+      "_tgt": "weatherservice_cacheddailyforecastpoint_todomain",
+      "source": "weatherservice_cacheddailyforecastpoint",
+      "target": "weatherservice_cacheddailyforecastpoint_todomain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L573",
+      "weight": 1.0,
+      "_src": "weatherservice_cachedalertscard",
+      "_tgt": "weatherservice_cachedalertscard_todomain",
+      "source": "weatherservice_cachedalertscard",
+      "target": "weatherservice_cachedalertscard_todomain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L589",
+      "weight": 1.0,
+      "_src": "weatherservice_cachedweatheralert",
+      "_tgt": "weatherservice_cachedweatheralert_todomain",
+      "source": "weatherservice_cachedweatheralert",
+      "target": "weatherservice_cachedweatheralert_todomain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L606",
+      "weight": 1.0,
+      "_src": "weatherservice_cachedradarcard",
+      "_tgt": "weatherservice_cachedradarcard_todomain",
+      "source": "weatherservice_cachedradarcard",
+      "target": "weatherservice_cachedradarcard_todomain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "source_location": "L618",
+      "weight": 1.0,
+      "_src": "weatherservice_cachedradarframe",
+      "_tgt": "weatherservice_cachedradarframe_todomain",
+      "source": "weatherservice_cachedradarframe",
+      "target": "weatherservice_cachedradarframe_todomain",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}

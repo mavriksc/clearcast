@@ -1,6 +1,7 @@
 package org.mavriksc.clearcast.services
 
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
@@ -95,23 +96,23 @@ class WeatherService(
     private fun refreshMissingOnStart() {
         if (_currentFlow.value == null) {
             logger.info("Current conditions missing; fetching now")
-            refreshCurrentFromObservation()
+            runRefresh("current conditions", ::refreshCurrentFromObservation)
         }
         if (_hourlyFlow.value == null) {
             logger.info("Hourly forecast missing; fetching now")
-            refreshHourlyForecast()
+            runRefresh("hourly forecast", ::refreshHourlyForecast)
         }
         if (_dailyFlow.value == null) {
             logger.info("Daily forecast missing; fetching now")
-            refreshDailyForecast()
+            runRefresh("daily forecast", ::refreshDailyForecast)
         }
         if (_alertsFlow.value == null) {
             logger.info("Alerts missing; fetching now")
-            refreshAlerts()
+            runRefresh("alerts", ::refreshAlerts)
         }
         if (_radarFlow.value == null) {
             logger.info("Radar missing; fetching now")
-            refreshRadar()
+            runRefresh("radar", ::refreshRadar)
         }
     }
 
@@ -141,36 +142,46 @@ class WeatherService(
         scope.launch {
             while (true) {
                 delay(Duration.ofSeconds(config.currentSeconds).toMillis())
-                refreshCurrentFromObservation()
+                runRefresh("current conditions", ::refreshCurrentFromObservation)
             }
         }
 
         scope.launch {
             while (true) {
                 delay(Duration.ofSeconds(config.hourlySeconds).toMillis())
-                refreshHourlyForecast()
+                runRefresh("hourly forecast", ::refreshHourlyForecast)
             }
         }
 
         scope.launch {
             while (true) {
                 delay(Duration.ofSeconds(config.radarSeconds).toMillis())
-                refreshRadar()
+                runRefresh("radar", ::refreshRadar)
             }
         }
 
         scope.launch {
             while (true) {
                 delay(Duration.ofSeconds(config.dailySeconds).toMillis())
-                refreshDailyForecast()
+                runRefresh("daily forecast", ::refreshDailyForecast)
             }
         }
 
         scope.launch {
             while (true) {
                 delay(Duration.ofSeconds(config.alertsSeconds).toMillis())
-                refreshAlerts()
+                runRefresh("alerts", ::refreshAlerts)
             }
+        }
+    }
+
+    private fun runRefresh(name: String, refresh: () -> Unit) {
+        try {
+            refresh()
+        } catch (ex: CancellationException) {
+            throw ex
+        } catch (ex: Exception) {
+            logger.warn("{} refresh failed; keeping existing data and retrying on the next schedule", name, ex)
         }
     }
 
@@ -579,21 +590,25 @@ data class CachedAlertsCard(
 @Serializable
 data class CachedWeatherAlert(
     val title: String,
+    val headline: String = "",
     val severity: AlertSeverity,
     val urgency: AlertUrgency,
     val areas: List<String>,
     val effectiveAtEpochMs: Long? = null,
     val expiresAtEpochMs: Long? = null,
     val description: String,
+    val instruction: String = "",
 ) {
     fun toDomain(): WeatherAlert = WeatherAlert(
         title = title,
+        headline = headline,
         severity = severity,
         urgency = urgency,
         areas = areas,
         effectiveAt = effectiveAtEpochMs?.let { Instant.ofEpochMilli(it) },
         expiresAt = expiresAtEpochMs?.let { Instant.ofEpochMilli(it) },
         description = description,
+        instruction = instruction,
     )
 }
 
@@ -668,12 +683,14 @@ private fun AlertsCard.toCache(): CachedAlertsCard = CachedAlertsCard(
 
 private fun WeatherAlert.toCache(): CachedWeatherAlert = CachedWeatherAlert(
     title = title,
+    headline = headline,
     severity = severity,
     urgency = urgency,
     areas = areas,
     effectiveAtEpochMs = effectiveAt?.toEpochMilli(),
     expiresAtEpochMs = expiresAt?.toEpochMilli(),
     description = description,
+    instruction = instruction,
 )
 
 private fun RadarCard.toCache(): CachedRadarCard = CachedRadarCard(

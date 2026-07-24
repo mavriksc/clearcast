@@ -69,3 +69,36 @@
   object-fit: contain;
   image-rendering: auto;
 }
+
+@media (max-width: 600px) {
+  .current-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+
+  .current-temp {
+    font-size: 2.9rem;
+  }
+
+  .temp-estimate {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 1rem;
+  }
+
+  .current-condition {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    text-align: right;
+  }
+
+  .current-icon img {
+    width: 76px;
+    height: 76px;
+  }
+
+  .current-stats {
+    gap: 8px;
+    font-size: 0.95rem;
+  }
+}

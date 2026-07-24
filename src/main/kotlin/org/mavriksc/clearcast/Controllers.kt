@@ -51,9 +51,10 @@ fun Application.configureControllers(weatherService: WeatherService) {
                 "currentUpdatedAt" to updatedAt,
                 "estimatedTempText" to (estimatedTempText ?: ""),
                 "alertsCount" to (weatherService.alertsFlow.value?.alerts?.size ?: 0),
-                "alertAreas" to buildAlertAreas(weatherService),
                 "dailyLabels" to buildDailyLabels(weatherService),
                 "radarFrames" to buildRadarFrameUrls(weatherService),
+                "hourlyIconPoints" to buildHourlyIconPoints(weatherService),
+                "hourlyIconStep" to buildHourlyIconStep(weatherService),
                 "hourlyTimes" to buildHourlyTimesList(weatherService, hourFormatter),
                 "hourlyTemps" to buildHourlyTempsList(weatherService),
                 "hourlyPrecip" to buildHourlyPrecipList(weatherService),
@@ -134,6 +135,21 @@ private fun buildHourlyTimesList(
     return hours.map { formatter.format(it.time).replace(" ", "") }
 }
 
+private fun buildHourlyIconPoints(weatherService: WeatherService): List<HourlyForecastPoint> {
+    val hours = weatherService.hourlyFlow.value?.hours ?: emptyList()
+    val step = buildHourlyIconStep(weatherService)
+    return hours.filterIndexed { index, _ -> index % step == 0 }
+}
+
+private fun buildHourlyIconStep(weatherService: WeatherService): Int {
+    val hourCount = weatherService.hourlyFlow.value?.hours?.size ?: 0
+    return hourlyDisplayStep(hourCount)
+}
+
+private fun hourlyDisplayStep(hourCount: Int): Int {
+    return maxOf(1, kotlin.math.ceil(hourCount / 8.0).toInt())
+}
+
 private fun buildHourlyTempsList(weatherService: WeatherService): List<Int> {
     val hours = weatherService.hourlyFlow.value?.hours ?: emptyList()
     return hours.map { it.temperatureF.toInt() }
@@ -159,11 +175,6 @@ private fun buildDailyLabels(weatherService: WeatherService): List<String> {
 private fun buildRadarFrameUrls(weatherService: WeatherService): List<String> {
     val frames = weatherService.radarFlow.value?.frames ?: emptyList()
     return frames.map { it.url }
-}
-
-private fun buildAlertAreas(weatherService: WeatherService): List<String> {
-    val alerts = weatherService.alertsFlow.value?.alerts ?: emptyList()
-    return alerts.flatMap { it.areas }.distinct()
 }
 
 private fun buildEstimatedTempText(

@@ -1,0 +1,47 @@
+{
+  "files": {
+    "code": [
+      "D:\\code\\clearcast\\build-image.ps1",
+      "D:\\code\\clearcast\\build.gradle.kts",
+      "D:\\code\\clearcast\\gradlew",
+      "D:\\code\\clearcast\\settings.gradle.kts",
+      "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt",
+      "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt",
+      "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt",
+      "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Main.kt",
+      "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Static.kt",
+      "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt",
+      "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\MoonPhaseService.kt",
+      "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt",
+      "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt",
+      "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt",
+      "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt",
+      "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt",
+      "D:\\code\\clearcast\\src\\main\\resources\\static\\js\\hourly.js",
+      "D:\\code\\clearcast\\src\\main\\resources\\static\\js\\radar.js",
+      "D:\\code\\clearcast\\src\\test\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsersTest.kt"
+    ],
+    "document": [
+      "D:\\code\\clearcast\\AGENTS.md",
+      "D:\\code\\clearcast\\compose.yaml",
+      "D:\\code\\clearcast\\DOCKER_HUB_OVERVIEW.md",
+      "D:\\code\\clearcast\\README.md",
+      "D:\\code\\clearcast\\src\\main\\resources\\templates\\index.html",
+      "D:\\code\\clearcast\\src\\main\\resources\\templates\\fragments\\alerts.html",
+      "D:\\code\\clearcast\\src\\main\\resources\\templates\\fragments\\current.html",
+      "D:\\code\\clearcast\\src\\main\\resources\\templates\\fragments\\daily.html",
+      "D:\\code\\clearcast\\src\\main\\resources\\templates\\fragments\\hourly.html",
+      "D:\\code\\clearcast\\src\\main\\resources\\templates\\fragments\\radar.html"
+    ],
+    "paper": [],
+    "image": [],
+    "video": []
+  },
+  "total_files": 29,
+  "total_words": 11837,
+  "needs_graph": false,
+  "warning": "Corpus is ~11,837 words - fits in a single context window. You may not need a graph.",
+  "skipped_sensitive": [],
+  "graphifyignore_patterns": 38,
+  "scan_root": "D:\\code\\clearcast"
+}

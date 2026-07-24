@@ -1,0 +1,157 @@
+{
+  "D:\\code\\clearcast\\build-image.ps1": {
+    "mtime": 1774404090.7038991,
+    "ast_hash": "d07ba7c559f484a77b1a092418dcfe88",
+    "semantic_hash": "d07ba7c559f484a77b1a092418dcfe88"
+  },
+  "D:\\code\\clearcast\\build.gradle.kts": {
+    "mtime": 1777409504.840861,
+    "ast_hash": "d29feac40ce06f57b064a64336d5be47",
+    "semantic_hash": "d29feac40ce06f57b064a64336d5be47"
+  },
+  "D:\\code\\clearcast\\settings.gradle.kts": {
+    "mtime": 1774363199.8330064,
+    "ast_hash": "e1dc03ebc5d50a2ee7024c7a53798160",
+    "semantic_hash": "e1dc03ebc5d50a2ee7024c7a53798160"
+  },
+  "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\AlertFilters.kt": {
+    "mtime": 1774392232.2825637,
+    "ast_hash": "8ad7cf597afb06c567a5bd619c87f03c",
+    "semantic_hash": "8ad7cf597afb06c567a5bd619c87f03c"
+  },
+  "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Controllers.kt": {
+    "mtime": 1777409356.2154746,
+    "ast_hash": "f03888242540ce06fbc1a3ce868dd4b7",
+    "semantic_hash": "f03888242540ce06fbc1a3ce868dd4b7"
+  },
+  "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Env.kt": {
+    "mtime": 1774403739.6361582,
+    "ast_hash": "ed5c496cc70c4ba1cc7f600fa3419d98",
+    "semantic_hash": "ed5c496cc70c4ba1cc7f600fa3419d98"
+  },
+  "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Main.kt": {
+    "mtime": 1774403739.6361582,
+    "ast_hash": "5d8f846b442f77971fcee7f2dfdc4445",
+    "semantic_hash": "5d8f846b442f77971fcee7f2dfdc4445"
+  },
+  "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Static.kt": {
+    "mtime": 1774403739.6371582,
+    "ast_hash": "9cb0a2d558cc96a05c146a728bb4d7a4",
+    "semantic_hash": "9cb0a2d558cc96a05c146a728bb4d7a4"
+  },
+  "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\Types.kt": {
+    "mtime": 1777409601.862581,
+    "ast_hash": "e3a9d00cec32d7e4b653eeecd97a2840",
+    "semantic_hash": "e3a9d00cec32d7e4b653eeecd97a2840"
+  },
+  "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\MoonPhaseService.kt": {
+    "mtime": 1774386127.9105408,
+    "ast_hash": "fd5c198ee30be497ffcfe53d2563d576",
+    "semantic_hash": "fd5c198ee30be497ffcfe53d2563d576"
+  },
+  "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarRidgeService.kt": {
+    "mtime": 1774403739.6371582,
+    "ast_hash": "988f2f173d7a790d62c61fd65ebb4899",
+    "semantic_hash": "988f2f173d7a790d62c61fd65ebb4899"
+  },
+  "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\RadarWmsService.kt": {
+    "mtime": 1774403739.6371582,
+    "ast_hash": "cf8ac37ee5096e7c03c4c7f69c813c00",
+    "semantic_hash": "cf8ac37ee5096e7c03c4c7f69c813c00"
+  },
+  "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsers.kt": {
+    "mtime": 1777409612.5899072,
+    "ast_hash": "18fdfc944e24b77b24cd13a2c930c4dc",
+    "semantic_hash": "18fdfc944e24b77b24cd13a2c930c4dc"
+  },
+  "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovService.kt": {
+    "mtime": 1774387516.5890172,
+    "ast_hash": "6f76e576fe03df11ee9eae28c6e4065f",
+    "semantic_hash": "6f76e576fe03df11ee9eae28c6e4065f"
+  },
+  "D:\\code\\clearcast\\src\\main\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherService.kt": {
+    "mtime": 1777409620.3596787,
+    "ast_hash": "ca7a194cc5387fca57013af450a3a6df",
+    "semantic_hash": "ca7a194cc5387fca57013af450a3a6df"
+  },
+  "D:\\code\\clearcast\\src\\main\\resources\\static\\js\\hourly.js": {
+    "mtime": 1777409948.3365567,
+    "ast_hash": "ce7b3c8760923b52e952c4329669e419",
+    "semantic_hash": "ce7b3c8760923b52e952c4329669e419"
+  },
+  "D:\\code\\clearcast\\src\\main\\resources\\static\\js\\radar.js": {
+    "mtime": 1774403739.6391585,
+    "ast_hash": "32ca0c6e419cfa928537534b6d723134",
+    "semantic_hash": "32ca0c6e419cfa928537534b6d723134"
+  },
+  "D:\\code\\clearcast\\AGENTS.md": {
+    "mtime": 1774403739.635158,
+    "ast_hash": "a31894d24928581854d834c8e72fc3d4",
+    "semantic_hash": "a31894d24928581854d834c8e72fc3d4"
+  },
+  "D:\\code\\clearcast\\DOCKER_HUB_OVERVIEW.md": {
+    "mtime": 1776012857.8807654,
+    "ast_hash": "86493174f2569d486d31b0488bb3316c",
+    "semantic_hash": "86493174f2569d486d31b0488bb3316c"
+  },
+  "D:\\code\\clearcast\\README.md": {
+    "mtime": 1776012857.8807654,
+    "ast_hash": "bb86f96419e3abd6beaec1a81170306d",
+    "semantic_hash": "bb86f96419e3abd6beaec1a81170306d"
+  },
+  "D:\\code\\clearcast\\responses\\images\\basemap.png": {
+    "mtime": 1774788939.0204082,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "D:\\code\\clearcast\\responses\\images\\radar.gif": {
+    "mtime": 1774788942.5375907,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "D:\\code\\clearcast\\gradlew": {
+    "mtime": 1774363199.7772305,
+    "ast_hash": "48fe0bd77a66bbb62c1150926ab1332c",
+    "semantic_hash": "48fe0bd77a66bbb62c1150926ab1332c"
+  },
+  "D:\\code\\clearcast\\src\\test\\kotlin\\org\\mavriksc\\clearcast\\services\\WeatherGovParsersTest.kt": {
+    "mtime": 1777410848.1103246,
+    "ast_hash": "dd0774ac3e8bf431993c4e4a61d1789f",
+    "semantic_hash": "dd0774ac3e8bf431993c4e4a61d1789f"
+  },
+  "D:\\code\\clearcast\\compose.yaml": {
+    "mtime": 1774396308.4810822,
+    "ast_hash": "55ffd601b8b70560c97fa2f12a786a0d",
+    "semantic_hash": "55ffd601b8b70560c97fa2f12a786a0d"
+  },
+  "D:\\code\\clearcast\\src\\main\\resources\\templates\\index.html": {
+    "mtime": 1777409377.1601658,
+    "ast_hash": "fbae8d388eb4a86e847fc48c525c807a",
+    "semantic_hash": "fbae8d388eb4a86e847fc48c525c807a"
+  },
+  "D:\\code\\clearcast\\src\\main\\resources\\templates\\fragments\\alerts.html": {
+    "mtime": 1777409373.2755783,
+    "ast_hash": "a899287dcf77986a413687c96eb82e4a",
+    "semantic_hash": "a899287dcf77986a413687c96eb82e4a"
+  },
+  "D:\\code\\clearcast\\src\\main\\resources\\templates\\fragments\\current.html": {
+    "mtime": 1774394083.960758,
+    "ast_hash": "60e69fc0b9afdb796ea763c5380cbf51",
+    "semantic_hash": "60e69fc0b9afdb796ea763c5380cbf51"
+  },
+  "D:\\code\\clearcast\\src\\main\\resources\\templates\\fragments\\daily.html": {
+    "mtime": 1774381847.1757326,
+    "ast_hash": "cffe20a3bd5d8f2ffc661b13b90774f1",
+    "semantic_hash": "cffe20a3bd5d8f2ffc661b13b90774f1"
+  },
+  "D:\\code\\clearcast\\src\\main\\resources\\templates\\fragments\\hourly.html": {
+    "mtime": 1774374681.799015,
+    "ast_hash": "61b403683c89b72a571429a48db7cca1",
+    "semantic_hash": "61b403683c89b72a571429a48db7cca1"
+  },
+  "D:\\code\\clearcast\\src\\main\\resources\\templates\\fragments\\radar.html": {
+    "mtime": 1774383642.427337,
+    "ast_hash": "7398271363276e0d1d683e29c404ed51",
+    "semantic_hash": "7398271363276e0d1d683e29c404ed51"
+  }
+}

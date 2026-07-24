@@ -77,6 +77,46 @@ document.addEventListener("DOMContentLoaded", () => {
     legend: { font: { color: "#b7c0d6" } },
   };
 
-  Plotly.newPlot("hourly-chart", [tempTrace, precipTrace], layout, { displayModeBar: false });
+  const chart = document.getElementById("hourly-chart");
+  if (!chart) {
+    console.log("hourly: missing chart element");
+    return;
+  }
+
+  const iconRow = document.querySelector(".hourly-icons");
+  const syncHourlyIcons = () => {
+    if (!iconRow) return;
+
+    const plotLeft = layout.margin.l;
+    const plotRight = layout.margin.r;
+    const plotWidth = Math.max(0, chart.clientWidth - plotLeft - plotRight);
+    const iconStep = Number(iconRow.dataset.step) || tickStep;
+    const intervalWidth = plotWidth * iconStep / Math.max(1, times.length);
+
+    iconRow.querySelectorAll(".hourly-icon").forEach((icon) => {
+      const hourIndex = Number(icon.dataset.hourIndex);
+      const x = plotLeft + ((hourIndex + 0.5) / times.length) * plotWidth;
+      icon.style.left = `${x}px`;
+      icon.style.width = `${Math.max(1, intervalWidth - 4)}px`;
+    });
+  };
+
+  const resizeChart = () => {
+    window.requestAnimationFrame(() => {
+      Plotly.Plots.resize(chart);
+      syncHourlyIcons();
+    });
+  };
+
+  Plotly.newPlot(chart, [tempTrace, precipTrace], layout, {
+    displayModeBar: false,
+    responsive: true,
+  }).then(resizeChart);
+
+  window.addEventListener("resize", resizeChart);
+  if ("ResizeObserver" in window) {
+    const observer = new ResizeObserver(resizeChart);
+    observer.observe(chart);
+  }
   console.log("hourly: chart rendered");
 });
